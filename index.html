@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>🏆 Tabela Copa 2026</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>🏆 Tabela Copa 2026</h1>
+
+        <p>Acompanhe a classificação dos grupos</p>
+
+    </header>
+
+    <main>
+
+        <section class="jogos">
+
+            <h2>⚽ Simulação Completa - Grupo A</h2>
+
+            <h3>Rodada 1</h3>
+
+            <div class="partida">
+
+                <span>🇧🇷 Brasil</span>
+
+                <input type="number" id="brasil" min="0">
+
+                <span>x</span>
+
+                <input type="number" id="japao" min="0">
+
+                <span>🇯🇵 Japão</span>
+
+            </div>
+
+            <div class="partida">
+
+                <span>🇲🇽 México</span>
+
+                <input type="number" id="mexico" min="0">
+
+                <span>x</span>
+
+                <input type="number" id="camaroes" min="0">
+
+                <span>🇨🇲 Camarões</span>
+
+            </div>
+
+            <h3>Rodada 2</h3>
+
+            <div class="partida">
+
+                <span>🇧🇷 Brasil</span>
+
+                <input type="number" id="brasilMexico" min="0">
+
+                <span>x</span>
+
+                <input type="number" id="mexicoBrasil" min="0">
+
+                <span>🇲🇽 México</span>
+
+            </div>
+
+            <div class="partida">
+
+                <span>🇯🇵 Japão</span>
+
+                <input type="number" id="japaoCamaroes" min="0">
+
+                <span>x</span>
+
+                <input type="number" id="camaroesJapao" min="0">
+
+                <span>🇨🇲 Camarões</span>
+
+            </div>
+
+            <h3>Rodada 3</h3>
+
+            <div class="partida">
+
+                <span>🇧🇷 Brasil</span>
+
+                <input type="number" id="brasilCamaroes" min="0">
+
+                <span>x</span>
+
+                <input type="number" id="camaroesBrasil" min="0">
+
+                <span>🇨🇲 Camarões</span>
+
+            </div>
+
+            <div class="partida">
+
+                <span>🇲🇽 México</span>
+
+                <input type="number" id="mexicoJapao" min="0">
+
+                <span>x</span>
+
+                <input type="number" id="japaoMexico" min="0">
+
+                <span>🇯🇵 Japão</span>
+
+            </div>
+
+            <button id="simular">
+
+                Atualizar Classificação
+
+            </button>
+
+        </section>
+
+        <section class="grupo">
+
+            <h2>🏆 Grupo A</h2>
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Seleção</th>
+                            <th>PTS</th>
+                            <th>J</th>
+                            <th>V</th>
+                            <th>E</th>
+                            <th>D</th>
+                            <th>SG</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="classificacaoA">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
