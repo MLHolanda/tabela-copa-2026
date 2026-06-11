@@ -101,3 +101,11 @@ td{
     }
 
 }
+#limpar{
+    background:#c62828;
+    margin-top:10px;
+}
+
+#limpar:hover{
+    opacity:0.9;
+}

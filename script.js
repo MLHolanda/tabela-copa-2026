@@ -240,10 +240,22 @@ function salvarDados() {
     );
 
 }
+document
+    .getElementById("limpar")
+    .addEventListener("click", () => {
+
+        if(confirm("Deseja apagar toda a simulação?")){
+
+            localStorage.removeItem("grupoA");
+
+            location.reload();
+
+        }
+
+    });
 
 carregarDados();
 
 document
     .getElementById("simular")
     .click();
-    
