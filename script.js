@@ -167,6 +167,7 @@ function renderizarTabela() {
 
     tabela.innerHTML += `
       <tr class="${classe}">
+        <td>${index + 1}</td>
         <td>${time.nome}</td>
         <td>${time.pontos}</td>
         <td>${time.jogos}</td>
@@ -387,10 +388,11 @@ document
     
         tabela.innerHTML = "";
     
-        grupoB.forEach(time => {
+        grupoB.forEach((time,index) => {
     
             tabela.innerHTML += `
                 <tr>
+                    <td>${index + 1}</td>
                     <td>${time.nome}</td>
                     <td>${time.pontos}</td>
                     <td>${time.jogos}</td>
