@@ -45,6 +45,57 @@ const grupoA = [
     saldo: 0
   }
 ];
+const grupoB = [
+
+    {
+        nome: "🇫🇷 França",
+        pontos: 0,
+        jogos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        golsPro: 0,
+        golsContra: 0,
+        saldo: 0
+    },
+
+    {
+        nome: "🇺🇸 Estados Unidos",
+        pontos: 0,
+        jogos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        golsPro: 0,
+        golsContra: 0,
+        saldo: 0
+    },
+
+    {
+        nome: "🇰🇷 Coreia do Sul",
+        pontos: 0,
+        jogos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        golsPro: 0,
+        golsContra: 0,
+        saldo: 0
+    },
+
+    {
+        nome: "🇳🇬 Nigéria",
+        pontos: 0,
+        jogos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        golsPro: 0,
+        golsContra: 0,
+        saldo: 0
+    }
+
+];
 
 function carregarDados() {
 
@@ -168,6 +219,17 @@ function processarJogo(timeA, golsA, timeB, golsB) {
     timeB.empates++;
   }
 }
+function jogoPreenchido(idA, idB) {
+
+    const valorA =
+        document.getElementById(idA).value;
+
+    const valorB =
+        document.getElementById(idB).value;
+
+    return valorA !== "" && valorB !== "";
+
+}
 
 document.getElementById("simular").addEventListener("click", () => {
 
@@ -196,14 +258,71 @@ document.getElementById("simular").addEventListener("click", () => {
   const timeJapao = grupoA.find(t => t.nome.includes("Japão"));
   const timeCamaroes = grupoA.find(t => t.nome.includes("Camarões"));
 
-  processarJogo(timeBrasil, brasil, timeJapao, japao);
-  processarJogo(timeMexico, mexico, timeCamaroes, camaroes);
+  if (jogoPreenchido("brasil", "japao")) {
 
-  processarJogo(timeBrasil, brasilMexico, timeMexico, mexicoBrasil);
-  processarJogo(timeJapao, japaoCamaroes, timeCamaroes, camaroesJapao);
+    processarJogo(
+        timeBrasil,
+        brasil,
+        timeJapao,
+        japao
+    );
 
-  processarJogo(timeBrasil, brasilCamaroes, timeCamaroes, camaroesBrasil);
-  processarJogo(timeMexico, mexicoJapao, timeJapao, japaoMexico);
+}
+
+if (jogoPreenchido("mexico", "camaroes")) {
+
+    processarJogo(
+        timeMexico,
+        mexico,
+        timeCamaroes,
+        camaroes
+    );
+
+}
+
+if (jogoPreenchido("brasilMexico", "mexicoBrasil")) {
+
+    processarJogo(
+        timeBrasil,
+        brasilMexico,
+        timeMexico,
+        mexicoBrasil
+    );
+
+}
+
+if (jogoPreenchido("japaoCamaroes", "camaroesJapao")) {
+
+    processarJogo(
+        timeJapao,
+        japaoCamaroes,
+        timeCamaroes,
+        camaroesJapao
+    );
+
+}
+
+if (jogoPreenchido("brasilCamaroes", "camaroesBrasil")) {
+
+    processarJogo(
+        timeBrasil,
+        brasilCamaroes,
+        timeCamaroes,
+        camaroesBrasil
+    );
+
+}
+
+if (jogoPreenchido("mexicoJapao", "japaoMexico")) {
+
+    processarJogo(
+        timeMexico,
+        mexicoJapao,
+        timeJapao,
+        japaoMexico
+    );
+
+}
 
   ordenarGrupo();
   renderizarTabela();
@@ -259,3 +378,31 @@ carregarDados();
 document
     .getElementById("simular")
     .click();
+    renderizarGrupoB();
+
+    function renderizarGrupoB() {
+
+        const tabela =
+            document.getElementById("classificacaoB");
+    
+        tabela.innerHTML = "";
+    
+        grupoB.forEach(time => {
+    
+            tabela.innerHTML += `
+                <tr>
+                    <td>${time.nome}</td>
+                    <td>${time.pontos}</td>
+                    <td>${time.jogos}</td>
+                    <td>${time.vitorias}</td>
+                    <td>${time.empates}</td>
+                    <td>${time.derrotas}</td>
+                    <td>${time.golsPro}</td>
+                    <td>${time.golsContra}</td>
+                    <td>${time.saldo}</td>
+                </tr>
+            `;
+    
+        });
+    
+    }
