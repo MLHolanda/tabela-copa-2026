@@ -6,6 +6,8 @@ const grupoA = [
     vitorias: 0,
     empates: 0,
     derrotas: 0,
+    golsPro: 0,
+    golsContra: 0,
     saldo: 0
   },
   {
@@ -15,6 +17,8 @@ const grupoA = [
     vitorias: 0,
     empates: 0,
     derrotas: 0,
+    golsPro: 0,
+    golsContra: 0,
     saldo: 0
   },
   {
@@ -24,7 +28,10 @@ const grupoA = [
     vitorias: 0,
     empates: 0,
     derrotas: 0,
+    golsPro: 0,
+    golsContra: 0,
     saldo: 0
+
   },
   {
     nome: "🇨🇲 Camarões",
@@ -33,9 +40,58 @@ const grupoA = [
     vitorias: 0,
     empates: 0,
     derrotas: 0,
+    golsPro: 0,
+    golsContra: 0,
     saldo: 0
   }
 ];
+
+function carregarDados() {
+
+    const dados =
+        JSON.parse(
+            localStorage.getItem("grupoA")
+        );
+
+    if (!dados) return;
+
+    document.getElementById("brasil").value =
+        dados.brasil || "";
+
+    document.getElementById("japao").value =
+        dados.japao || "";
+
+    document.getElementById("mexico").value =
+        dados.mexico || "";
+
+    document.getElementById("camaroes").value =
+        dados.camaroes || "";
+
+    document.getElementById("brasilMexico").value =
+        dados.brasilMexico || "";
+
+    document.getElementById("mexicoBrasil").value =
+        dados.mexicoBrasil || "";
+
+    document.getElementById("japaoCamaroes").value =
+        dados.japaoCamaroes || "";
+
+    document.getElementById("camaroesJapao").value =
+        dados.camaroesJapao || "";
+
+    document.getElementById("brasilCamaroes").value =
+        dados.brasilCamaroes || "";
+
+    document.getElementById("camaroesBrasil").value =
+        dados.camaroesBrasil || "";
+
+    document.getElementById("mexicoJapao").value =
+        dados.mexicoJapao || "";
+
+    document.getElementById("japaoMexico").value =
+        dados.japaoMexico || "";
+
+}
 
 function zerarGrupo() {
   grupoA.forEach(time => {
@@ -44,6 +100,8 @@ function zerarGrupo() {
     time.vitorias = 0;
     time.empates = 0;
     time.derrotas = 0;
+    time.golsPro = 0;
+    time.golsContra = 0;
     time.saldo = 0;
   });
 }
@@ -64,6 +122,8 @@ function renderizarTabela() {
         <td>${time.vitorias}</td>
         <td>${time.empates}</td>
         <td>${time.derrotas}</td>
+        <td>${time.golsPro}</td>
+        <td>${time.golsContra}</td>
         <td>${time.saldo}</td>
       </tr>
     `;
@@ -83,6 +143,12 @@ function ordenarGrupo() {
 function processarJogo(timeA, golsA, timeB, golsB) {
   timeA.jogos++;
   timeB.jogos++;
+
+  timeA.golsPro += golsA;
+  timeA.golsContra += golsB;
+
+  timeB.golsPro += golsB;
+  timeB.golsContra += golsA;
 
   timeA.saldo += golsA - golsB;
   timeB.saldo += golsB - golsA;
@@ -141,6 +207,43 @@ document.getElementById("simular").addEventListener("click", () => {
 
   ordenarGrupo();
   renderizarTabela();
+  salvarDados();
 });
 
-renderizarTabela();
+function salvarDados() {
+
+    const dados = {
+
+        brasil: document.getElementById("brasil").value,
+        japao: document.getElementById("japao").value,
+
+        mexico: document.getElementById("mexico").value,
+        camaroes: document.getElementById("camaroes").value,
+
+        brasilMexico: document.getElementById("brasilMexico").value,
+        mexicoBrasil: document.getElementById("mexicoBrasil").value,
+
+        japaoCamaroes: document.getElementById("japaoCamaroes").value,
+        camaroesJapao: document.getElementById("camaroesJapao").value,
+
+        brasilCamaroes: document.getElementById("brasilCamaroes").value,
+        camaroesBrasil: document.getElementById("camaroesBrasil").value,
+
+        mexicoJapao: document.getElementById("mexicoJapao").value,
+        japaoMexico: document.getElementById("japaoMexico").value
+
+    };
+
+    localStorage.setItem(
+        "grupoA",
+        JSON.stringify(dados)
+    );
+
+}
+
+carregarDados();
+
+document
+    .getElementById("simular")
+    .click();
+    
