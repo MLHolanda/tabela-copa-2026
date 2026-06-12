@@ -378,6 +378,60 @@ if (jogoPreenchido("franca", "eua")) {
     );
 
 }
+if (jogoPreenchido("coreia", "nigeria")) {
+
+    processarJogo(
+        timeCoreia,
+        coreia,
+        timeNigeria,
+        nigeria
+    );
+
+}
+
+if (jogoPreenchido("francaCoreia", "coreiaFranca")) {
+
+    processarJogo(
+        timeFranca,
+        francaCoreia,
+        timeCoreia,
+        coreiaFranca
+    );
+
+}
+
+if (jogoPreenchido("euaNigeria", "nigeriaEua")) {
+
+    processarJogo(
+        timeEua,
+        euaNigeria,
+        timeNigeria,
+        nigeriaEua
+    );
+
+}
+
+if (jogoPreenchido("francaNigeria", "nigeriaFranca")) {
+
+    processarJogo(
+        timeFranca,
+        francaNigeria,
+        timeNigeria,
+        nigeriaFranca
+    );
+
+}
+
+if (jogoPreenchido("euaCoreia", "coreiaEua")) {
+
+    processarJogo(
+        timeEua,
+        euaCoreia,
+        timeCoreia,
+        coreiaEua
+    );
+
+}
 
 ordenarGrupo(grupoA);
 ordenarGrupo(grupoB);
