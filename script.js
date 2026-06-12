@@ -163,6 +163,7 @@ function renderizarTabela() {
   tabela.innerHTML = "";
 
   grupoA.forEach((time, index) => {
+    
     let classe = "";
 
 if (index === 0) {
@@ -171,7 +172,6 @@ if (index === 0) {
 else if (index < 2) {
     classe = "classificado";
 }
-
     tabela.innerHTML += `
       <tr class="${classe}">
         <td>${index + 1}</td>
@@ -387,14 +387,7 @@ document
     .getElementById("simular")
     .click();
     renderizarGrupoB();
-    let classe = "";
-
-    if(index === 0){
-        classe = "lider";
-    }
-    else if(index < 2){
-        classe = "classificado";
-    }
+    
     function renderizarGrupoB() {
 
         const tabela =
@@ -403,6 +396,15 @@ document
         tabela.innerHTML = "";
     
         grupoB.forEach((time,index) => {
+            let classe = "";
+
+            if(index === 0){
+                classe = "lider";
+            }
+            else if(index < 2){
+                classe = "classificado";
+            }
+            
     
             tabela.innerHTML += `
                 <tr class="${classe}">
