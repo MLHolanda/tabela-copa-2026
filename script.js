@@ -386,25 +386,23 @@ carregarDados();
 document
     .getElementById("simular")
     .click();
-    renderizarGrupoB();
-    
-    function renderizarGrupoB() {
+    function renderizarGrupo(grupo, tabelaId) {
 
         const tabela =
-            document.getElementById("classificacaoB");
+            document.getElementById(tabelaId);
     
         tabela.innerHTML = "";
     
-        grupoB.forEach((time,index) => {
+        grupo.forEach((time, index) => {
+    
             let classe = "";
-
-            if(index === 0){
+    
+            if (index === 0) {
                 classe = "lider";
             }
-            else if(index < 2){
+            else if (index < 2) {
                 classe = "classificado";
             }
-            
     
             tabela.innerHTML += `
                 <tr class="${classe}">
@@ -423,4 +421,9 @@ document
     
         });
     
+    }
+    renderizarGrupoB();
+    
+    function renderizarGrupoB() {
+        renderizarGrupo(grupoB, "classificacaoB");
     }
