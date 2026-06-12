@@ -255,6 +255,20 @@ function jogoPreenchido(idA, idB) {
     return valorA !== "" && valorB !== "";
 
 }
+function processarPartida(idA, idB, timeA, timeB, golsA, golsB) {
+
+    if (jogoPreenchido(idA, idB)) {
+
+        processarJogo(
+            timeA,
+            golsA,
+            timeB,
+            golsB
+        );
+
+    }
+
+}
 
 document.getElementById("simular").addEventListener("click", () => {
 
@@ -368,70 +382,58 @@ if (jogoPreenchido("mexicoJapao", "japaoMexico")) {
     );
 
 }
-if (jogoPreenchido("franca", "eua")) {
+processarPartida(
+    "franca",
+    "eua",
+    timeFranca,
+    timeEua,
+    franca,
+    eua
+);
+processarPartida(
+    "coreia",
+    "nigeria",
+    timeCoreia,
+    timeNigeria,
+    coreia,
+    nigeria
+);
 
-    processarJogo(
-        timeFranca,
-        franca,
-        timeEua,
-        eua
-    );
+processarPartida(
+    "francaCoreia",
+    "coreiaFranca",
+    timeFranca,
+    timeCoreia,
+    francaCoreia,
+    coreiaFranca
+);
 
-}
-if (jogoPreenchido("coreia", "nigeria")) {
+processarPartida(
+    "euaNigeria",
+    "nigeriaEua",
+    timeEua,
+    timeNigeria,
+    euaNigeria,
+    nigeriaEua
+);
 
-    processarJogo(
-        timeCoreia,
-        coreia,
-        timeNigeria,
-        nigeria
-    );
+processarPartida(
+    "francaNigeria",
+    "nigeriaFranca",
+    timeFranca,
+    timeNigeria,
+    francaNigeria,
+    nigeriaFranca
+);
 
-}
-
-if (jogoPreenchido("francaCoreia", "coreiaFranca")) {
-
-    processarJogo(
-        timeFranca,
-        francaCoreia,
-        timeCoreia,
-        coreiaFranca
-    );
-
-}
-
-if (jogoPreenchido("euaNigeria", "nigeriaEua")) {
-
-    processarJogo(
-        timeEua,
-        euaNigeria,
-        timeNigeria,
-        nigeriaEua
-    );
-
-}
-
-if (jogoPreenchido("francaNigeria", "nigeriaFranca")) {
-
-    processarJogo(
-        timeFranca,
-        francaNigeria,
-        timeNigeria,
-        nigeriaFranca
-    );
-
-}
-
-if (jogoPreenchido("euaCoreia", "coreiaEua")) {
-
-    processarJogo(
-        timeEua,
-        euaCoreia,
-        timeCoreia,
-        coreiaEua
-    );
-
-}
+processarPartida(
+    "euaCoreia",
+    "coreiaEua",
+    timeEua,
+    timeCoreia,
+    euaCoreia,
+    coreiaEua
+);
 
 ordenarGrupo(grupoA);
 ordenarGrupo(grupoB);
