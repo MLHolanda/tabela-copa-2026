@@ -157,7 +157,17 @@ function zerarGrupo() {
   });
 }
 
-
+function ordenarGrupo() {
+    grupoA.sort((a, b) => {
+  
+      if (b.pontos !== a.pontos) {
+        return b.pontos - a.pontos;
+      }
+  
+      return b.saldo - a.saldo;
+  
+    });
+  }
 
 function processarJogo(timeA, golsA, timeB, golsB) {
   timeA.jogos++;
