@@ -320,7 +320,23 @@ document.getElementById("simular").addEventListener("click", () => {
 
   const euaCoreia = Number(document.getElementById("euaCoreia").value || 0);
   const coreiaEua = Number(document.getElementById("coreiaEua").value || 0);
+  const inglaterra = Number(document.getElementById("inglaterra").value || 0);
+  const canada = Number(document.getElementById("canada").value || 0);
 
+  const polonia = Number(document.getElementById("polonia").value || 0);
+  const gana = Number(document.getElementById("gana").value || 0);
+
+  const inglaterraPolonia = Number(document.getElementById("inglaterraPolonia").value || 0);
+  const poloniaInglaterra = Number(document.getElementById("poloniaInglaterra").value || 0);
+
+  const canadaGana = Number(document.getElementById("canadaGana").value || 0);
+  const ganaCanada = Number(document.getElementById("ganaCanada").value || 0);
+
+  const inglaterraGana = Number(document.getElementById("inglaterraGana").value || 0);
+  const ganaInglaterra = Number(document.getElementById("ganaInglaterra").value || 0);
+
+  const canadaPolonia = Number(document.getElementById("canadaPolonia").value || 0);
+  const poloniaCanada = Number(document.getElementById("poloniaCanada").value || 0);
   const timeBrasil = grupoA.find(t => t.nome.includes("Brasil"));
   const timeMexico = grupoA.find(t => t.nome.includes("México"));
   const timeJapao = grupoA.find(t => t.nome.includes("Japão"));
@@ -329,6 +345,10 @@ document.getElementById("simular").addEventListener("click", () => {
   const timeEua = grupoB.find(t => t.nome.includes("Estados Unidos"));
   const timeCoreia = grupoB.find(t => t.nome.includes("Coreia"));
   const timeNigeria = grupoB.find(t => t.nome.includes("Nigéria"));
+  const timeInglaterra = grupoC.find(t => t.nome.includes("Inglaterra"));
+  const timeCanada = grupoC.find(t => t.nome.includes("Canadá"));
+  const timePolonia = grupoC.find(t => t.nome.includes("Polônia"));
+  const timeGana = grupoC.find(t => t.nome.includes("Gana"));
 
   processarPartida(
     "brasil",
@@ -435,13 +455,67 @@ processarPartida(
     euaCoreia,
     coreiaEua
 );
+processarPartida(
+    "inglaterra",
+    "canada",
+    timeInglaterra,
+    timeCanada,
+    inglaterra,
+    canada
+);
 
+processarPartida(
+    "polonia",
+    "gana",
+    timePolonia,
+    timeGana,
+    polonia,
+    gana
+);
+
+processarPartida(
+    "inglaterraPolonia",
+    "poloniaInglaterra",
+    timeInglaterra,
+    timePolonia,
+    inglaterraPolonia,
+    poloniaInglaterra
+);
+
+processarPartida(
+    "canadaGana",
+    "ganaCanada",
+    timeCanada,
+    timeGana,
+    canadaGana,
+    ganaCanada
+);
+
+processarPartida(
+    "inglaterraGana",
+    "ganaInglaterra",
+    timeInglaterra,
+    timeGana,
+    inglaterraGana,
+    ganaInglaterra
+);
+
+processarPartida(
+    "canadaPolonia",
+    "poloniaCanada",
+    timeCanada,
+    timePolonia,
+    canadaPolonia,
+    poloniaCanada
+);
 ordenarGrupo(grupoA);
 ordenarGrupo(grupoB);
+ordenarGrupo(grupoC);
   console.log("Grupo A:", grupoA);
 
-renderizarGrupo(grupoA, "classificacaoA");
-renderizarGrupo(grupoB, "classificacaoB");
+  renderizarGrupo(grupoA, "classificacaoA");
+  renderizarGrupo(grupoB, "classificacaoB");
+  renderizarGrupo(grupoC, "classificacaoC");
   salvarDados();
 });
 
