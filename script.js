@@ -185,30 +185,36 @@ function carregarDados() {
 
 }
 
-function zerarGrupo() {
-  grupoA.forEach(time => {
-    time.pontos = 0;
-    time.jogos = 0;
-    time.vitorias = 0;
-    time.empates = 0;
-    time.derrotas = 0;
-    time.golsPro = 0;
-    time.golsContra = 0;
-    time.saldo = 0;
-  });
-}
+function zerarGrupo(grupo) {
 
-function ordenarGrupo() {
-    grupoA.sort((a, b) => {
+    grupo.forEach(time => {
   
-      if (b.pontos !== a.pontos) {
-        return b.pontos - a.pontos;
-      }
-  
-      return b.saldo - a.saldo;
+      time.pontos = 0;
+      time.jogos = 0;
+      time.vitorias = 0;
+      time.empates = 0;
+      time.derrotas = 0;
+      time.golsPro = 0;
+      time.golsContra = 0;
+      time.saldo = 0;
   
     });
+  
   }
+
+  function ordenarGrupo(grupo) {
+
+    grupo.sort((a, b) => {
+
+        if (b.pontos !== a.pontos) {
+            return b.pontos - a.pontos;
+        }
+
+        return b.saldo - a.saldo;
+
+    });
+
+}
 
 function processarJogo(timeA, golsA, timeB, golsB) {
   timeA.jogos++;
@@ -252,8 +258,8 @@ function jogoPreenchido(idA, idB) {
 
 document.getElementById("simular").addEventListener("click", () => {
 
-  zerarGrupo();
-
+    zerarGrupo(grupoA);
+    zerarGrupo(grupoB);
   const brasil = Number(document.getElementById("brasil").value || 0);
   const japao = Number(document.getElementById("japao").value || 0);
 
@@ -271,11 +277,31 @@ document.getElementById("simular").addEventListener("click", () => {
 
   const mexicoJapao = Number(document.getElementById("mexicoJapao").value || 0);
   const japaoMexico = Number(document.getElementById("japaoMexico").value || 0);
+  const franca = Number(document.getElementById("franca").value || 0);
+  const eua = Number(document.getElementById("eua").value || 0);
+  const coreia = Number(document.getElementById("coreia").value || 0);
+  const nigeria = Number(document.getElementById("nigeria").value || 0);
+
+  const francaCoreia = Number(document.getElementById("francaCoreia").value || 0);
+  const coreiaFranca = Number(document.getElementById("coreiaFranca").value || 0);
+
+  const euaNigeria = Number(document.getElementById("euaNigeria").value || 0);
+  const nigeriaEua = Number(document.getElementById("nigeriaEua").value || 0);
+
+  const francaNigeria = Number(document.getElementById("francaNigeria").value || 0);
+  const nigeriaFranca = Number(document.getElementById("nigeriaFranca").value || 0);
+
+  const euaCoreia = Number(document.getElementById("euaCoreia").value || 0);
+  const coreiaEua = Number(document.getElementById("coreiaEua").value || 0);
 
   const timeBrasil = grupoA.find(t => t.nome.includes("Brasil"));
   const timeMexico = grupoA.find(t => t.nome.includes("México"));
   const timeJapao = grupoA.find(t => t.nome.includes("Japão"));
   const timeCamaroes = grupoA.find(t => t.nome.includes("Camarões"));
+  const timeFranca = grupoB.find(t => t.nome.includes("França"));
+  const timeEua = grupoB.find(t => t.nome.includes("Estados Unidos"));
+  const timeCoreia = grupoB.find(t => t.nome.includes("Coreia"));
+  const timeNigeria = grupoB.find(t => t.nome.includes("Nigéria"));
 
   if (jogoPreenchido("brasil", "japao")) {
 
@@ -342,11 +368,23 @@ if (jogoPreenchido("mexicoJapao", "japaoMexico")) {
     );
 
 }
+if (jogoPreenchido("franca", "eua")) {
 
-  ordenarGrupo();
+    processarJogo(
+        timeFranca,
+        franca,
+        timeEua,
+        eua
+    );
+
+}
+
+ordenarGrupo(grupoA);
+ordenarGrupo(grupoB);
   console.log("Grupo A:", grupoA);
 
 renderizarGrupo(grupoA, "classificacaoA");
+renderizarGrupo(grupoB, "classificacaoB");
   salvarDados();
 });
 
