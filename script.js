@@ -330,71 +330,59 @@ document.getElementById("simular").addEventListener("click", () => {
   const timeCoreia = grupoB.find(t => t.nome.includes("Coreia"));
   const timeNigeria = grupoB.find(t => t.nome.includes("Nigéria"));
 
-  if (jogoPreenchido("brasil", "japao")) {
+  processarPartida(
+    "brasil",
+    "japao",
+    timeBrasil,
+    timeJapao,
+    brasil,
+    japao
+);
 
-    processarJogo(
-        timeBrasil,
-        brasil,
-        timeJapao,
-        japao
-    );
+processarPartida(
+    "mexico",
+    "camaroes",
+    timeMexico,
+    timeCamaroes,
+    mexico,
+    camaroes
+);
 
-}
+processarPartida(
+    "brasilMexico",
+    "mexicoBrasil",
+    timeBrasil,
+    timeMexico,
+    brasilMexico,
+    mexicoBrasil
+);
 
-if (jogoPreenchido("mexico", "camaroes")) {
+processarPartida(
+    "japaoCamaroes",
+    "camaroesJapao",
+    timeJapao,
+    timeCamaroes,
+    japaoCamaroes,
+    camaroesJapao
+);
 
-    processarJogo(
-        timeMexico,
-        mexico,
-        timeCamaroes,
-        camaroes
-    );
+processarPartida(
+    "brasilCamaroes",
+    "camaroesBrasil",
+    timeBrasil,
+    timeCamaroes,
+    brasilCamaroes,
+    camaroesBrasil
+);
 
-}
-
-if (jogoPreenchido("brasilMexico", "mexicoBrasil")) {
-
-    processarJogo(
-        timeBrasil,
-        brasilMexico,
-        timeMexico,
-        mexicoBrasil
-    );
-
-}
-
-if (jogoPreenchido("japaoCamaroes", "camaroesJapao")) {
-
-    processarJogo(
-        timeJapao,
-        japaoCamaroes,
-        timeCamaroes,
-        camaroesJapao
-    );
-
-}
-
-if (jogoPreenchido("brasilCamaroes", "camaroesBrasil")) {
-
-    processarJogo(
-        timeBrasil,
-        brasilCamaroes,
-        timeCamaroes,
-        camaroesBrasil
-    );
-
-}
-
-if (jogoPreenchido("mexicoJapao", "japaoMexico")) {
-
-    processarJogo(
-        timeMexico,
-        mexicoJapao,
-        timeJapao,
-        japaoMexico
-    );
-
-}
+processarPartida(
+    "mexicoJapao",
+    "japaoMexico",
+    timeMexico,
+    timeJapao,
+    mexicoJapao,
+    japaoMexico
+);
 processarPartida(
     "franca",
     "eua",
