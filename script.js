@@ -137,6 +137,19 @@ const grupoH = [
     { nome: "🇨🇴 Colômbia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
     { nome: "🇳🇿 Nova Zelândia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
+const grupos = {
+
+    A: grupoA,
+    B: grupoB,
+    C: grupoC,
+    D: grupoD,
+    E: grupoE,
+    F: grupoF,
+    G: grupoG,
+    H: grupoH
+
+};
+
 
 function carregarDados() {
 
@@ -530,13 +543,14 @@ document
         .getElementById("simular")
         .click();
     
-        renderizarGrupo(grupoB, "classificacaoB");
-        renderizarGrupo(grupoC, "classificacaoC");
-        renderizarGrupo(grupoD, "classificacaoD");
-        renderizarGrupo(grupoE, "classificacaoE");
-        renderizarGrupo(grupoF, "classificacaoF");
-        renderizarGrupo(grupoG, "classificacaoG");
-        renderizarGrupo(grupoH, "classificacaoH");
+        for (const letra in grupos) {
+
+            renderizarGrupo(
+                grupos[letra],
+                "classificacao" + letra
+            );
+        
+        }
     
     function renderizarGrupoB() {
         renderizarGrupo(grupoB, "classificacaoB");
