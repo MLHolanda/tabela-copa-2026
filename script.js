@@ -157,47 +157,7 @@ function zerarGrupo() {
   });
 }
 
-function renderizarTabela() {
-  const tabela = document.getElementById("classificacaoA");
 
-  tabela.innerHTML = "";
-
-  grupoA.forEach((time, index) => {
-    
-    let classe = "";
-
-if (index === 0) {
-    classe = "lider";
-}
-else if (index < 2) {
-    classe = "classificado";
-}
-    tabela.innerHTML += `
-      <tr class="${classe}">
-        <td>${index + 1}</td>
-        <td>${time.nome}</td>
-        <td>${time.pontos}</td>
-        <td>${time.jogos}</td>
-        <td>${time.vitorias}</td>
-        <td>${time.empates}</td>
-        <td>${time.derrotas}</td>
-        <td>${time.golsPro}</td>
-        <td>${time.golsContra}</td>
-        <td>${time.saldo}</td>
-      </tr>
-    `;
-  });
-}
-
-function ordenarGrupo() {
-  grupoA.sort((a, b) => {
-    if (b.pontos !== a.pontos) {
-      return b.pontos - a.pontos;
-    }
-
-    return b.saldo - a.saldo;
-  });
-}
 
 function processarJogo(timeA, golsA, timeB, golsB) {
   timeA.jogos++;
@@ -333,7 +293,9 @@ if (jogoPreenchido("mexicoJapao", "japaoMexico")) {
 }
 
   ordenarGrupo();
-  renderizarTabela();
+  console.log("Grupo A:", grupoA);
+
+renderizarGrupo(grupoA, "classificacaoA");
   salvarDados();
 });
 
@@ -380,12 +342,6 @@ document
         }
 
     });
-
-carregarDados();
-
-document
-    .getElementById("simular")
-    .click();
     function renderizarGrupo(grupo, tabelaId) {
 
         const tabela =
@@ -422,6 +378,13 @@ document
         });
     
     }
+    carregarDados();
+    renderizarGrupo(grupoA, "classificacaoA");
+       
+    document
+        .getElementById("simular")
+        .click();
+    
     renderizarGrupoB();
     
     function renderizarGrupoB() {
