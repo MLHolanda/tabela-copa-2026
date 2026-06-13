@@ -1,6 +1,6 @@
 const grupoA = [
   {
-    nome: "🇧🇷 Brasil",
+    nome: "🇿🇦 África do Sul",
     pontos: 0,
     jogos: 0,
     vitorias: 0,
@@ -22,7 +22,7 @@ const grupoA = [
     saldo: 0
   },
   {
-    nome: "🇯🇵 Japão",
+   nome: "🇰🇷 Coreia do Sul",
     pontos: 0,
     jogos: 0,
     vitorias: 0,
@@ -34,7 +34,7 @@ const grupoA = [
 
   },
   {
-    nome: "🇨🇲 Camarões",
+    nome: "🇨🇿 República Tcheca",
     pontos: 0,
     jogos: 0,
     vitorias: 0,
@@ -150,7 +150,7 @@ const grupos = {
 
 };
 
-
+/*
 function carregarDados() {
 
     const dados =
@@ -196,7 +196,7 @@ function carregarDados() {
     document.getElementById("japaoMexico").value =
         dados.japaoMexico || "";
 
-}
+}  */
 
 function zerarGrupo(grupo) {
 
@@ -287,23 +287,23 @@ document.getElementById("simular").addEventListener("click", () => {
 
     zerarGrupo(grupoA);
     zerarGrupo(grupoB);
-  const brasil = Number(document.getElementById("brasil").value || 0);
-  const japao = Number(document.getElementById("japao").value || 0);
-
   const mexico = Number(document.getElementById("mexico").value || 0);
-  const camaroes = Number(document.getElementById("camaroes").value || 0);
+  const africadosul = Number(document.getElementById("africadosul").value || 0);
 
-  const brasilMexico = Number(document.getElementById("brasilMexico").value || 0);
-  const mexicoBrasil = Number(document.getElementById("mexicoBrasil").value || 0);
+  const coreiadosul = Number(document.getElementById("coreiadosul").value || 0);
+  const republicatcheca = Number(document.getElementById("republicatcheca").value || 0);
 
-  const japaoCamaroes = Number(document.getElementById("japaoCamaroes").value || 0);
-  const camaroesJapao = Number(document.getElementById("camaroesJapao").value || 0);
+  const republicatchecaAfricaDoSul = Number(document.getElementById("coreiadosul").value || 0);
+  const africadosulRepublicaTcheca = Number(document.getElementById("republicatcheca").value || 0);
 
-  const brasilCamaroes = Number(document.getElementById("brasilCamaroes").value || 0);
-  const camaroesBrasil = Number(document.getElementById("camaroesBrasil").value || 0);
+  const mexicoCoreiaDoSul = Number(document.getElementById("japaoCamaroes").value || 0);
+  const coreiaDoSulMexico = Number(document.getElementById("camaroesJapao").value || 0);
 
-  const mexicoJapao = Number(document.getElementById("mexicoJapao").value || 0);
-  const japaoMexico = Number(document.getElementById("japaoMexico").value || 0);
+  const republicatchecaMexico = Number(document.getElementById("brasilCamaroes").value || 0);
+  const mexicoRepublicaTcheca = Number(document.getElementById("camaroesBrasil").value || 0);
+
+  const africadosulCoreiaDoSul = Number(document.getElementById("mexicoJapao").value || 0);
+  const coreiaDoSulAfricaDoSul = Number(document.getElementById("japaoMexico").value || 0);
   const franca = Number(document.getElementById("franca").value || 0);
   const eua = Number(document.getElementById("eua").value || 0);
   const coreia = Number(document.getElementById("coreia").value || 0);
@@ -320,11 +320,11 @@ document.getElementById("simular").addEventListener("click", () => {
 
   const euaCoreia = Number(document.getElementById("euaCoreia").value || 0);
   const coreiaEua = Number(document.getElementById("coreiaEua").value || 0);
-  const brasil = Number(document.getElementById("brasil").value || 0);
-  const marrocos = Number(document.getElementById("marrocos").value || 0);
+  const brasilC = Number(document.getElementById("brasil").value || 0);
+  const marrocosC = Number(document.getElementById("marrocos").value || 0);
 
-  const haiti = Number(document.getElementById("haiti").value || 0);
-  const escocia = Number(document.getElementById("escocia").value || 0);
+  const haitiC = Number(document.getElementById("haiti").value || 0);
+  const escociaC = Number(document.getElementById("escocia").value || 0);
 
   const escociaMarrocos = Number(document.getElementById("escociaMarrocos").value || 0);
   const marrocosEscocia = Number(document.getElementById("marrocosEscocia").value || 0);
@@ -422,10 +422,10 @@ document.getElementById("simular").addEventListener("click", () => {
 
   const euaHColombia = Number(document.getElementById("euaHColombia").value || 0);
   const colombiaEuaH = Number(document.getElementById("colombiaEuaH").value || 0);
-  const timeBrasil = grupoA.find(t => t.nome.includes("Brasil"));
+  const timeAfricaDoSul = grupoA.find(t => t.nome.includes("África"));
   const timeMexico = grupoA.find(t => t.nome.includes("México"));
-  const timeJapao = grupoA.find(t => t.nome.includes("Japão"));
-  const timeCamaroes = grupoA.find(t => t.nome.includes("Camarões"));
+  const timeCoreiaDoSul = grupoA.find(t => t.nome.includes("Coreia"));
+  const timeRepublicaTcheca = grupoA.find(t => t.nome.includes("República"));
   const timeFranca = grupoB.find(t => t.nome.includes("França"));
   const timeEua = grupoB.find(t => t.nome.includes("Estados Unidos"));
   const timeCoreia = grupoB.find(t => t.nome.includes("Coreia"));
@@ -455,57 +455,57 @@ document.getElementById("simular").addEventListener("click", () => {
   const timeColombia = grupoH.find(t => t.nome.includes("Colômbia"));
   const timeNovaZelandia = grupoH.find(t => t.nome.includes("Nova Zelândia"));
   processarPartida(
-    "brasil",
-    "japao",
-    timeBrasil,
-    timeJapao,
-    brasil,
-    japao
-);
-
-processarPartida(
     "mexico",
-    "camaroes",
+    "africadosul",
     timeMexico,
-    timeCamaroes,
+    timeAfricaDoSul,
     mexico,
-    camaroes
+    africadosul
 );
 
 processarPartida(
-    "brasilMexico",
-    "mexicoBrasil",
-    timeBrasil,
-    timeMexico,
-    brasilMexico,
-    mexicoBrasil
+    "coreiadosul",
+    "republicatcheca",
+    timeCoreiaDoSul,
+    timeRepublicaTcheca,
+    coreiadosul,
+    republicatcheca
+);
+
+processarPartida(
+    "coreiadosul",
+    "republicatcheca",
+    timeCoreiaDoSul,
+    timeRepublicaTcheca,
+    republicatchecaAfricaDoSul,
+    africadosulRepublicaTcheca
 );
 
 processarPartida(
     "japaoCamaroes",
     "camaroesJapao",
-    timeJapao,
-    timeCamaroes,
-    japaoCamaroes,
-    camaroesJapao
+    timeMexico,
+    timeCoreiaDoSul,
+    mexicoCoreiaDoSul,
+    coreiaDoSulMexico
 );
 
 processarPartida(
     "brasilCamaroes",
     "camaroesBrasil",
-    timeBrasil,
-    timeCamaroes,
-    brasilCamaroes,
-    camaroesBrasil
+    timeRepublicaTcheca,
+    timeMexico,
+    republicatchecaMexico,
+    mexicoRepublicaTcheca
 );
 
 processarPartida(
     "mexicoJapao",
     "japaoMexico",
-    timeMexico,
-    timeJapao,
-    mexicoJapao,
-    japaoMexico
+    timeAfricaDoSul,
+    timeCoreiaDoSul,
+    africadosulCoreiaDoSul,
+    coreiaDoSulAfricaDoSul
 );
 processarPartida(
     "franca",
@@ -564,19 +564,17 @@ processarPartida(
     "marrocos",
     timeBrasilC,
     timeMarrocosC,
-    brasil,
-    marrocos
+    brasilC,
+    marrocosC
 );
-
 processarPartida(
     "haiti",
     "escocia",
     timeHaiti,
     timeEscocia,
-    haiti,
-    escocia
+    haitiC,
+    escociaC
 );
-
 processarPartida(
     "escociaMarrocos",
     "marrocosEscocia",
@@ -896,7 +894,7 @@ renderizarGrupo(grupoB, "classificacaoB");
 renderizarGrupo(grupoC, "classificacaoC");
 renderizarGrupo(grupoD, "classificacaoD");
 
-salvarDados();
+// salvarDados();
 });
 
 function salvarDados() {
@@ -978,7 +976,7 @@ document
         });
     
     }
-    carregarDados();
+//    carregarDados();
     renderizarGrupo(grupoA, "classificacaoA");
        
     document
