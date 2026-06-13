@@ -371,6 +371,23 @@ document.getElementById("simular").addEventListener("click", () => {
 
   const suicaMarrocos = Number(document.getElementById("suicaMarrocos").value || 0);
   const marrocosSuica = Number(document.getElementById("marrocosSuica").value || 0);
+  const alemanha = Number(document.getElementById("alemanha").value || 0);
+  const uruguai = Number(document.getElementById("uruguai").value || 0);
+
+  const japaoF = Number(document.getElementById("japaoF").value || 0);
+  const camaroesF = Number(document.getElementById("camaroesF").value || 0);
+
+  const alemanhaJapao = Number(document.getElementById("alemanhaJapao").value || 0);
+  const japaoAlemanha = Number(document.getElementById("japaoAlemanha").value || 0);
+
+  const uruguaiCamaroes = Number(document.getElementById("uruguaiCamaroes").value || 0);
+  const camaroesUruguai = Number(document.getElementById("camaroesUruguai").value || 0);
+
+  const alemanhaCamaroes = Number(document.getElementById("alemanhaCamaroes").value || 0);
+  const camaroesAlemanha = Number(document.getElementById("camaroesAlemanha").value || 0);
+
+  const uruguaiJapao = Number(document.getElementById("uruguaiJapao").value || 0);
+  const japaoUruguai = Number(document.getElementById("japaoUruguai").value || 0);
   const timeBrasil = grupoA.find(t => t.nome.includes("Brasil"));
   const timeMexico = grupoA.find(t => t.nome.includes("México"));
   const timeJapao = grupoA.find(t => t.nome.includes("Japão"));
@@ -391,6 +408,10 @@ document.getElementById("simular").addEventListener("click", () => {
   const timeSuica = grupoE.find(t => t.nome.includes("Suíça"));
   const timeMarrocos = grupoE.find(t => t.nome.includes("Marrocos"));
   const timeAustralia = grupoE.find(t => t.nome.includes("Austrália"));
+  const timeAlemanha = grupoF.find(t => t.nome.includes("Alemanha"));
+  const timeUruguai = grupoF.find(t => t.nome.includes("Uruguai"));
+  const timeJapaoF = grupoF.find(t => t.nome.includes("Japão"));
+  const timeCamaroesF = grupoF.find(t => t.nome.includes("Camarões"));
   processarPartida(
     "brasil",
     "japao",
@@ -655,14 +676,67 @@ processarPartida(
     suicaMarrocos,
     marrocosSuica
 );
+processarPartida(
+    "alemanha",
+    "uruguai",
+    timeAlemanha,
+    timeUruguai,
+    alemanha,
+    uruguai
+);
 
+processarPartida(
+    "japaoF",
+    "camaroesF",
+    timeJapaoF,
+    timeCamaroesF,
+    japaoF,
+    camaroesF
+);
+
+processarPartida(
+    "alemanhaJapao",
+    "japaoAlemanha",
+    timeAlemanha,
+    timeJapaoF,
+    alemanhaJapao,
+    japaoAlemanha
+);
+
+processarPartida(
+    "uruguaiCamaroes",
+    "camaroesUruguai",
+    timeUruguai,
+    timeCamaroesF,
+    uruguaiCamaroes,
+    camaroesUruguai
+);
+
+processarPartida(
+    "alemanhaCamaroes",
+    "camaroesAlemanha",
+    timeAlemanha,
+    timeCamaroesF,
+    alemanhaCamaroes,
+    camaroesAlemanha
+);
+
+processarPartida(
+    "uruguaiJapao",
+    "japaoUruguai",
+    timeUruguai,
+    timeJapaoF,
+    uruguaiJapao,
+    japaoUruguai
+);
 ordenarGrupo(grupoE);
 renderizarGrupo(grupoE, "classificacaoE");
 ordenarGrupo(grupoA);
 ordenarGrupo(grupoB);
 ordenarGrupo(grupoC);
 ordenarGrupo(grupoD);
-
+ordenarGrupo(grupoF);
+renderizarGrupo(grupoF, "classificacaoF");
 console.log("Grupo A:", grupoA);
 
 renderizarGrupo(grupoA, "classificacaoA");
