@@ -388,6 +388,23 @@ document.getElementById("simular").addEventListener("click", () => {
 
   const uruguaiJapao = Number(document.getElementById("uruguaiJapao").value || 0);
   const japaoUruguai = Number(document.getElementById("japaoUruguai").value || 0);
+  const portugal = Number(document.getElementById("portugal").value || 0);
+  const mexicoG = Number(document.getElementById("mexicoG").value || 0);
+
+  const suecia = Number(document.getElementById("suecia").value || 0);
+  const senegal = Number(document.getElementById("senegal").value || 0);
+
+  const portugalSuecia = Number(document.getElementById("portugalSuecia").value || 0);
+  const sueciaPortugal = Number(document.getElementById("sueciaPortugal").value || 0);
+
+  const mexicoSenegal = Number(document.getElementById("mexicoSenegal").value || 0);
+  const senegalMexico = Number(document.getElementById("senegalMexico").value || 0);
+
+  const portugalSenegal = Number(document.getElementById("portugalSenegal").value || 0);
+  const senegalPortugal = Number(document.getElementById("senegalPortugal").value || 0);
+
+  const mexicoSuecia = Number(document.getElementById("mexicoSuecia").value || 0);
+  const sueciaMexico = Number(document.getElementById("sueciaMexico").value || 0);
   const timeBrasil = grupoA.find(t => t.nome.includes("Brasil"));
   const timeMexico = grupoA.find(t => t.nome.includes("México"));
   const timeJapao = grupoA.find(t => t.nome.includes("Japão"));
@@ -412,6 +429,10 @@ document.getElementById("simular").addEventListener("click", () => {
   const timeUruguai = grupoF.find(t => t.nome.includes("Uruguai"));
   const timeJapaoF = grupoF.find(t => t.nome.includes("Japão"));
   const timeCamaroesF = grupoF.find(t => t.nome.includes("Camarões"));
+  const timePortugal = grupoG.find(t => t.nome.includes("Portugal"));
+  const timeMexicoG = grupoG.find(t => t.nome.includes("México"));
+  const timeSuecia = grupoG.find(t => t.nome.includes("Suécia"));
+  const timeSenegal = grupoG.find(t => t.nome.includes("Senegal"));
   processarPartida(
     "brasil",
     "japao",
@@ -729,6 +750,59 @@ processarPartida(
     uruguaiJapao,
     japaoUruguai
 );
+processarPartida(
+    "portugal",
+    "mexicoG",
+    timePortugal,
+    timeMexicoG,
+    portugal,
+    mexicoG
+);
+
+processarPartida(
+    "suecia",
+    "senegal",
+    timeSuecia,
+    timeSenegal,
+    suecia,
+    senegal
+);
+
+processarPartida(
+    "portugalSuecia",
+    "sueciaPortugal",
+    timePortugal,
+    timeSuecia,
+    portugalSuecia,
+    sueciaPortugal
+);
+
+processarPartida(
+    "mexicoSenegal",
+    "senegalMexico",
+    timeMexicoG,
+    timeSenegal,
+    mexicoSenegal,
+    senegalMexico
+);
+
+processarPartida(
+    "portugalSenegal",
+    "senegalPortugal",
+    timePortugal,
+    timeSenegal,
+    portugalSenegal,
+    senegalPortugal
+);
+
+processarPartida(
+    "mexicoSuecia",
+    "sueciaMexico",
+    timeMexicoG,
+    timeSuecia,
+    mexicoSuecia,
+    sueciaMexico
+);
 ordenarGrupo(grupoE);
 renderizarGrupo(grupoE, "classificacaoE");
 ordenarGrupo(grupoA);
@@ -736,6 +810,8 @@ ordenarGrupo(grupoB);
 ordenarGrupo(grupoC);
 ordenarGrupo(grupoD);
 ordenarGrupo(grupoF);
+ordenarGrupo(grupoG);
+renderizarGrupo(grupoG, "classificacaoG");
 renderizarGrupo(grupoF, "classificacaoF");
 console.log("Grupo A:", grupoA);
 
