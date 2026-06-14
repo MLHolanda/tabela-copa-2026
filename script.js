@@ -149,8 +149,6 @@ const grupos = {
     H: grupoH
 
 };
-
-/*
 function carregarDados() {
 
     const dados =
@@ -160,23 +158,17 @@ function carregarDados() {
 
     if (!dados) return;
 
-    document.getElementById("brasil").value =
-        dados.brasil || "";
-
-    document.getElementById("japao").value =
-        dados.japao || "";
-
     document.getElementById("mexico").value =
         dados.mexico || "";
 
-    document.getElementById("camaroes").value =
-        dados.camaroes || "";
+    document.getElementById("africadosul").value =
+        dados.africadosul || "";
 
-    document.getElementById("brasilMexico").value =
-        dados.brasilMexico || "";
+    document.getElementById("coreiadosul").value =
+        dados.coreiadosul || "";
 
-    document.getElementById("mexicoBrasil").value =
-        dados.mexicoBrasil || "";
+    document.getElementById("republicatcheca").value =
+        dados.republicatcheca || "";
 
     document.getElementById("japaoCamaroes").value =
         dados.japaoCamaroes || "";
@@ -196,7 +188,8 @@ function carregarDados() {
     document.getElementById("japaoMexico").value =
         dados.japaoMexico || "";
 
-}  */
+}
+
 
 function zerarGrupo(grupo) {
 
@@ -894,21 +887,18 @@ renderizarGrupo(grupoB, "classificacaoB");
 renderizarGrupo(grupoC, "classificacaoC");
 renderizarGrupo(grupoD, "classificacaoD");
 
-// salvarDados();
+ salvarDados();
 });
 
 function salvarDados() {
 
     const dados = {
 
-        brasil: document.getElementById("brasil").value,
-        japao: document.getElementById("japao").value,
-
         mexico: document.getElementById("mexico").value,
-        camaroes: document.getElementById("camaroes").value,
+        africadosul: document.getElementById("africadosul").value,
 
-        brasilMexico: document.getElementById("brasilMexico").value,
-        mexicoBrasil: document.getElementById("mexicoBrasil").value,
+        coreiadosul: document.getElementById("coreiadosul").value,
+        republicatcheca: document.getElementById("republicatcheca").value,
 
         japaoCamaroes: document.getElementById("japaoCamaroes").value,
         camaroesJapao: document.getElementById("camaroesJapao").value,
@@ -976,7 +966,7 @@ document
         });
     
     }
-//    carregarDados();
+carregarDados();
     renderizarGrupo(grupoA, "classificacaoA");
        
     document
