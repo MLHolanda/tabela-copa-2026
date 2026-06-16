@@ -2,809 +2,703 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>🏆 Tabela Copa 2026</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
     <header>
-
         <h1>🏆 Tabela Copa 2026</h1>
-
         <p>Acompanhe a classificação dos grupos</p>
-
     </header>
 
     <main>
-
+        <!-- Abrimos a section aqui para abraçar TODOS os grupos do torneio -->
         <section class="jogos">
 
             <h2>⚽ Simulação Completa - Grupo A</h2>
-
+            
             <h3>Rodada 1</h3>
-
+            
             <div class="partida">
-
-               <span>🇲🇽 México</span>
-
-                <input type="number" id="mexico" min="0">
-
-                <span>x</span>
-
-                <input type="number" id="africadosul" min="0">
-
-                <span>🇿🇦 África do Sul</span>
-
-            </div>
-
-            <div class="partida">
-
-                <span>🇰🇷 Coreia do Sul</span>
-
-                <input type="number" id="coreiadosul" min="0">
-
-                <span>x</span>
-
-                <input type="number" id="republicatcheca" min="0">
-
-                <span>🇨🇿 República Tcheca</span>
-
-            </div>
-
-            <h3>Rodada 2</h3>
-
-            <div class="partida">
-
-               <span>🇨🇿 República Tcheca</span>
-
-                <input type="number" id="coreiadosul" min="0">
-
-                <span>x</span>
-
-                <input type="number" id="republicatcheca" min="0">
-
-                <span>🇿🇦 África do Sul</span>
-
-            </div>
-
-            <div class="partida">
-
                 <span>🇲🇽 México</span>
-
-                <input type="number" id="japaoCamaroes" min="0">
-
+                <input type="number" id="mexico_r1" min="0">
                 <span>x</span>
-
-                <input type="number" id="camaroesJapao" min="0">
-
-                <span>🇰🇷 Coreia do Sul</span>
-
-            </div>
-
-            <h3>Rodada 3</h3>
-
-            <div class="partida">
-
-               <span>🇨🇿 República Tcheca</span>
-
-                <input type="number" id="brasilCamaroes" min="0">
-
-                <span>x</span>
-
-                <input type="number" id="camaroesBrasil" min="0">
-
-              <span>🇲🇽 México</span>
-
-            </div>
-
-            <div class="partida">
-
+                <input type="number" id="africadosul_r1" min="0">
                 <span>🇿🇦 África do Sul</span>
-
-                <input type="number" id="mexicoJapao" min="0">
-
-                <span>x</span>
-
-                <input type="number" id="japaoMexico" min="0">
-
-              <span>🇰🇷 Coreia do Sul</span>
-
             </div>
-
-            <button id="simular">
-
-                Atualizar Classificação
-
-            </button>
-
-            <button id="limpar">
-                🗑 Nova Simulação
-            </button>
-
-        </section>
-        <hr>
-
-            <h2>⚽ Simulação Completa - Grupo B</h2>
-
-            <h3>Rodada 1</h3>
-
-            <div class="partida">
-                <span>🇫🇷 França</span>
-                <input type="number" id="franca" min="0">
-                <span>x</span>
-                <input type="number" id="eua" min="0">
-                <span>🇺🇸 Estados Unidos</span>
-            </div>
-
+            
             <div class="partida">
                 <span>🇰🇷 Coreia do Sul</span>
-                <input type="number" id="coreia" min="0">
+                <input type="number" id="coreiasul_r1" min="0">
                 <span>x</span>
-                <input type="number" id="nigeria" min="0">
-                <span>🇳🇬 Nigéria</span>
+                <input type="number" id="tchequia_r1" min="0">
+                <span>🇨🇿 República Tcheca</span>
             </div>
-
             <h3>Rodada 2</h3>
-
+            
             <div class="partida">
-                <span>🇫🇷 França</span>
-                <input type="number" id="francaCoreia" min="0">
+                <span>🇨🇿 República Tcheca</span>
+                <input type="number" id="tchequia_r2" min="0">
                 <span>x</span>
-                <input type="number" id="coreiaFranca" min="0">
-                <span>🇰🇷 Coreia do Sul</span>
+                <input type="number" id="africadosul_r2" min="0">
+                <span>🇿🇦 África do Sul</span>
             </div>
-
+            
             <div class="partida">
-                <span>🇺🇸 Estados Unidos</span>
-                <input type="number" id="euaNigeria" min="0">
+                <span>🇲🇽 México</span>
+                <input type="number" id="mexico_r2" min="0">
                 <span>x</span>
-                <input type="number" id="nigeriaEua" min="0">
-                <span>🇳🇬 Nigéria</span>
+                <input type="number" id="coreiasul_r2" min="0">
+                <span>🇰🇷 Coreia do Sul</span>
             </div>
 
             <h3>Rodada 3</h3>
-
+            
             <div class="partida">
-                <span>🇫🇷 França</span>
-                <input type="number" id="francaNigeria" min="0">
+                <span>🇨🇿 República Tcheca</span>
+                <input type="number" id="tchequia_r3" min="0">
                 <span>x</span>
-                <input type="number" id="nigeriaFranca" min="0">
-                <span>🇳🇬 Nigéria</span>
+                <input type="number" id="mexico_r3" min="0">
+                <span>🇲🇽 México</span>
             </div>
-
+            
             <div class="partida">
-                <span>🇺🇸 Estados Unidos</span>
-                <input type="number" id="euaCoreia" min="0">
+                <span>🇿🇦 África do Sul</span>
+                <input type="number" id="africadosul_r3" min="0">
                 <span>x</span>
-                <input type="number" id="coreiaEua" min="0">
+                <input type="number" id="coreiasul_r3" min="0">
                 <span>🇰🇷 Coreia do Sul</span>
             </div>
 
             <hr>
-
+            <h2>⚽ Simulação Completa - Grupo B</h2>
+            
+            <h3>Rodada 1</h3>
+            
+            <div class="partida">
+                <span>🇨🇦 Canadá</span>
+                <input type="number" id="canada_r1" min="0">
+                <span>x</span>
+                <input type="number" id="bosnia_r1" min="0">
+                <span>🇧🇦 Bósnia e Herzegovina</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇶🇦 Catar</span>
+                <input type="number" id="catar_r1" min="0">
+                <span>x</span>
+                <input type="number" id="suica_r1" min="0">
+                <span>🇨🇭 Suíça</span>
+            </div>
+            
+            <h3>Rodada 2</h3>
+            
+            <div class="partida">
+                <span>🇨🇦 Canadá</span>
+                <input type="number" id="canada_r2" min="0">
+                <span>x</span>
+                <input type="number" id="catar_r2" min="0">
+                <span>🇶🇦 Catar</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇨🇭 Suíça</span>
+                <input type="number" id="suica_r2" min="0">
+                <span>x</span>
+                <input type="number" id="bosnia_r2" min="0">
+                <span>🇧🇦 Bósnia e Herzegovina</span>
+            </div>
+            
+            <h3>Rodada 3</h3>
+            
+            <div class="partida">
+                <span>🇨🇭 Suíça</span>
+                <input type="number" id="suica_r3" min="0">
+                <span>x</span>
+                <input type="number" id="canada_r3" min="0">
+                <span>🇨🇦 Canadá</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇧🇦 Bósnia e Herzegovina</span>
+                <input type="number" id="bosnia_r3" min="0">
+                <span>x</span>
+                <input type="number" id="catar_r3" min="0">
+                <span>🇶🇦 Catar</span>
+            </div>
+            
+            <hr>
             <h2>⚽ Simulação Completa - Grupo C</h2>
             
             <h3>Rodada 1</h3>
             
             <div class="partida">
-               
                 <span>🇧🇷 Brasil</span>
-                <input type="number" id="brasil" min="0">
+                <input type="number" id="brasil_r1" min="0">
                 <span>x</span>
-                <input type="number" id="marrocos" min="0">
+                <input type="number" id="marrocos_r1" min="0">
                 <span>🇲🇦 Marrocos</span>
             </div>
             
             <div class="partida">
                 <span>🇭🇹 Haiti</span>
-                <input type="number" id="haiti" min="0">
+                <input type="number" id="haiti_r1" min="0">
                 <span>x</span>
-                <input type="number" id="escocia" min="0">
-                <span>🏴 Escócia</span>
-
+                <input type="number" id="escocia_r1" min="0">
+                <span>🏴Escócia</span>
             </div>
             
             <h3>Rodada 2</h3>
             
             <div class="partida">
-                <span>🏴 Escócia</span>
-               <input type="number" id="escociaMarrocos" min="0">
+                <span>🏴Escócia</span>
+                <input type="number" id="escocia_r2" min="0">
                 <span>x</span>
-               <input type="number" id="marrocosEscocia" min="0">
+                <input type="number" id="marrocos_r2" min="0">
                 <span>🇲🇦 Marrocos</span>
             </div>
             
             <div class="partida">
                 <span>🇧🇷 Brasil</span>
-               <input type="number" id="brasilHaiti" min="0">
+                <input type="number" id="brasil_r2" min="0">
                 <span>x</span>
-               <input type="number" id="haitiBrasil" min="0">
+                <input type="number" id="haiti_r2" min="0">
                 <span>🇭🇹 Haiti</span>
             </div>
             
             <h3>Rodada 3</h3>
             
             <div class="partida">
-                <span>🏴 Escócia</span>
-                <input type="number" id="escociaBrasil" min="0">
+                <span>🏴Escócia</span>
+                <input type="number" id="escocia_r3" min="0">
                 <span>x</span>
-                <input type="number" id="brasilEscocia" min="0">
-               <span>🇧🇷 Brasil</span>
+                <input type="number" id="brasil_r3" min="0">
+                <span>🇧🇷 Brasil</span>
             </div>
             
             <div class="partida">
                 <span>🇲🇦 Marrocos</span>
-                <input type="number" id="marrocosHaiti" min="0">
+                <input type="number" id="marrocos_r3" min="0">
                 <span>x</span>
-                <input type="number" id="haitiMarrocos" min="0">
+                <input type="number" id="haiti_r3" min="0">
                 <span>🇭🇹 Haiti</span>
             </div>
+            
             <hr>
-
             <h2>⚽ Simulação Completa - Grupo D</h2>
             
             <h3>Rodada 1</h3>
             
             <div class="partida">
-                <span>🇦🇷 Argentina</span>
-                <input type="number" id="argentina" min="0">
+                <span>🇺🇸 Estados Unidos</span>
+                <input type="number" id="eua_r1" min="0">
                 <span>x</span>
-                <input type="number" id="dinamarca" min="0">
-                <span>🇩🇰 Dinamarca</span>
+                <input type="number" id="paraguai_r1" min="0">
+                <span>🇵🇾 Paraguai</span>
             </div>
             
             <div class="partida">
-                <span>🇪🇬 Egito</span>
-                <input type="number" id="egito" min="0">
+                <span>🇦🇺 Austrália</span>
+                <input type="number" id="australia_r1" min="0">
                 <span>x</span>
-                <input type="number" id="costaRica" min="0">
-                <span>🇨🇷 Costa Rica</span>
+                <input type="number" id="turquia_r1" min="0">
+                <span>🇹🇷 Turquia</span>
             </div>
             
             <h3>Rodada 2</h3>
             
             <div class="partida">
-                <span>🇦🇷 Argentina</span>
-                <input type="number" id="argentinaEgito" min="0">
+                <span>🇺🇸 Estados Unidos</span>
+                <input type="number" id="eua_r2" min="0">
                 <span>x</span>
-                <input type="number" id="egitoArgentina" min="0">
-                <span>🇪🇬 Egito</span>
+                <input type="number" id="australia_r2" min="0">
+                <span>🇦🇺 Austrália</span>
             </div>
             
             <div class="partida">
-                <span>🇩🇰 Dinamarca</span>
-                <input type="number" id="dinamarcaCostaRica" min="0">
+                <span>🇹🇷 Turquia</span>
+                <input type="number" id="turquia_r2" min="0">
                 <span>x</span>
-                <input type="number" id="costaRicaDinamarca" min="0">
-                <span>🇨🇷 Costa Rica</span>
+                <input type="number" id="paraguai_r2" min="0">
+                <span>🇵🇾 Paraguai</span>
             </div>
             
             <h3>Rodada 3</h3>
             
             <div class="partida">
-                <span>🇦🇷 Argentina</span>
-                <input type="number" id="argentinaCostaRica" min="0">
+                <span>🇹🇷 Turquia</span>
+                <input type="number" id="turquia_r3" min="0">
                 <span>x</span>
-                <input type="number" id="costaRicaArgentina" min="0">
-                <span>🇨🇷 Costa Rica</span>
+                <input type="number" id="eua_r3" min="0">
+                <span>🇺🇸 Estados Unidos</span>
             </div>
             
             <div class="partida">
-                <span>🇩🇰 Dinamarca</span>
-                <input type="number" id="dinamarcaEgito" min="0">
+                <span>🇵🇾 Paraguai</span>
+                <input type="number" id="paraguai_r3" min="0">
                 <span>x</span>
-                <input type="number" id="egitoDinamarca" min="0">
-                <span>🇪🇬 Egito</span>
+                <input type="number" id="australia_r3" min="0">
+                <span>🇦🇺 Austrália</span>
             </div>
+            
             <hr>
-
             <h2>⚽ Simulação Completa - Grupo E</h2>
             
             <h3>Rodada 1</h3>
             
             <div class="partida">
-                <span>🇪🇸 Espanha</span>
-                <input type="number" id="espanha" min="0">
+                <span>🇩🇪 Alemanha</span>
+                <input type="number" id="alemanha_r1" min="0">
                 <span>x</span>
-                <input type="number" id="suica" min="0">
-                <span>🇨🇭 Suíça</span>
+                <input type="number" id="curacao_r1" min="0">
+                <span>🇨🇼 Curaçao</span>
             </div>
             
             <div class="partida">
-                <span>🇲🇦 Marrocos</span>
-                <input type="number" id="marrocos" min="0">
+                <span>🇨🇮 Costa do Marfim</span>
+                <input type="number" id="costamarfim_r1" min="0">
                 <span>x</span>
-                <input type="number" id="australia" min="0">
-                <span>🇦🇺 Austrália</span>
+                <input type="number" id="equador_r1" min="0">
+                <span>🇪🇨 Equador</span>
             </div>
             
             <h3>Rodada 2</h3>
             
             <div class="partida">
-                <span>🇪🇸 Espanha</span>
-                <input type="number" id="espanhaMarrocos" min="0">
+                <span>🇩🇪 Alemanha</span>
+                <input type="number" id="alemanha_r2" min="0">
                 <span>x</span>
-                <input type="number" id="marrocosEspanha" min="0">
-                <span>🇲🇦 Marrocos</span>
+                <input type="number" id="costamarfim_r2" min="0">
+                <span>🇨🇮 Costa do Marfim</span>
             </div>
             
             <div class="partida">
-                <span>🇨🇭 Suíça</span>
-                <input type="number" id="suicaAustralia" min="0">
+                <span>🇪🇨 Equador</span>
+                <input type="number" id="equador_r2" min="0">
                 <span>x</span>
-                <input type="number" id="australiaSuica" min="0">
-                <span>🇦🇺 Austrália</span>
+                <input type="number" id="curacao_r2" min="0">
+                <span>🇨🇼 Curaçao</span>
             </div>
             
             <h3>Rodada 3</h3>
             
             <div class="partida">
-                <span>🇪🇸 Espanha</span>
-                <input type="number" id="espanhaAustralia" min="0">
+                <span>🇪🇨 Equador</span>
+                <input type="number" id="equador_r3" min="0">
                 <span>x</span>
-                <input type="number" id="australiaEspanha" min="0">
-                <span>🇦🇺 Austrália</span>
+                <input type="number" id="alemanha_r3" min="0">
+                <span>🇩🇪 Alemanha</span>
             </div>
             
             <div class="partida">
-                <span>🇨🇭 Suíça</span>
-                <input type="number" id="suicaMarrocos" min="0">
+                <span>🇨🇼 Curaçao</span>
+                <input type="number" id="curacao_r3" min="0">
                 <span>x</span>
-                <input type="number" id="marrocosSuica" min="0">
-                <span>🇲🇦 Marrocos</span>
+                <input type="number" id="costamarfim_r3" min="0">
+                <span>🇨🇮 Costa do Marfim</span>
             </div>
+            
             <hr>
-
             <h2>⚽ Simulação Completa - Grupo F</h2>
             
             <h3>Rodada 1</h3>
             
             <div class="partida">
-                <span>🇩🇪 Alemanha</span>
-                <input type="number" id="alemanha" min="0">
+                <span>🇳🇱 Holanda</span>
+                <input type="number" id="holanda_r1" min="0">
                 <span>x</span>
-                <input type="number" id="uruguai" min="0">
-                <span>🇺🇾 Uruguai</span>
+                <input type="number" id="iraque_r1" min="0">
+                <span>🇮🇶 Iraque</span>
             </div>
             
             <div class="partida">
-                <span>🇯🇵 Japão</span>
-                <input type="number" id="japaoF" min="0">
+                <span>🇩🇿 Argélia</span>
+                <input type="number" id="argelia_r1" min="0">
                 <span>x</span>
-                <input type="number" id="camaroesF" min="0">
-                <span>🇨🇲 Camarões</span>
+                <input type="number" id="peru_r1" min="0">
+                <span>🇵🇪 Peru</span>
             </div>
             
             <h3>Rodada 2</h3>
             
             <div class="partida">
-                <span>🇩🇪 Alemanha</span>
-                <input type="number" id="alemanhaJapao" min="0">
+                <span>🇳🇱 Holanda</span>
+                <input type="number" id="holanda_r2" min="0">
                 <span>x</span>
-                <input type="number" id="japaoAlemanha" min="0">
-                <span>🇯🇵 Japão</span>
+                <input type="number" id="argelia_r2" min="0">
+                <span>🇩🇿 Argélia</span>
             </div>
             
             <div class="partida">
-                <span>🇺🇾 Uruguai</span>
-                <input type="number" id="uruguaiCamaroes" min="0">
+                <span>🇵🇪 Peru</span>
+                <input type="number" id="peru_r2" min="0">
                 <span>x</span>
-                <input type="number" id="camaroesUruguai" min="0">
-                <span>🇨🇲 Camarões</span>
+                <input type="number" id="iraque_r2" min="0">
+                <span>🇮🇶 Iraque</span>
             </div>
             
             <h3>Rodada 3</h3>
             
             <div class="partida">
-                <span>🇩🇪 Alemanha</span>
-                <input type="number" id="alemanhaCamaroes" min="0">
+                <span>🇵🇪 Peru</span>
+                <input type="number" id="peru_r3" min="0">
                 <span>x</span>
-                <input type="number" id="camaroesAlemanha" min="0">
-                <span>🇨🇲 Camarões</span>
+                <input type="number" id="holanda_r3" min="0">
+                <span>🇳🇱 Holanda</span>
             </div>
             
             <div class="partida">
-                <span>🇺🇾 Uruguai</span>
-                <input type="number" id="uruguaiJapao" min="0">
+                <span>🇮🇶 Iraque</span>
+                <input type="number" id="iraque_r3" min="0">
                 <span>x</span>
-                <input type="number" id="japaoUruguai" min="0">
-                <span>🇯🇵 Japão</span>
+                <input type="number" id="argelia_r3" min="0">
+                <span>🇩🇿 Argélia</span>
             </div>
-
+            
             <hr>
-
             <h2>⚽ Simulação Completa - Grupo G</h2>
             
             <h3>Rodada 1</h3>
             
             <div class="partida">
-                <span>🇵🇹 Portugal</span>
-                <input type="number" id="portugal" min="0">
+                <span>🇧🇪 Bélgica</span>
+                <input type="number" id="belgica_r1" min="0">
                 <span>x</span>
-                <input type="number" id="mexicoG" min="0">
-                <span>🇲🇽 México</span>
+                <input type="number" id="egito_r1" min="0">
+                <span>🇪🇬 Egito</span>
             </div>
             
             <div class="partida">
-                <span>🇸🇪 Suécia</span>
-                <input type="number" id="suecia" min="0">
+                <span>🇮🇷 Irã</span>
+                <input type="number" id="ira_r1" min="0">
                 <span>x</span>
-                <input type="number" id="senegal" min="0">
-                <span>🇸🇳 Senegal</span>
-            </div>
-            
-            <h3>Rodada 2</h3>
-            
-            <div class="partida">
-                <span>🇵🇹 Portugal</span>
-                <input type="number" id="portugalSuecia" min="0">
-                <span>x</span>
-                <input type="number" id="sueciaPortugal" min="0">
-                <span>🇸🇪 Suécia</span>
-            </div>
-            
-            <div class="partida">
-                <span>🇲🇽 México</span>
-                <input type="number" id="mexicoSenegal" min="0">
-                <span>x</span>
-                <input type="number" id="senegalMexico" min="0">
-                <span>🇸🇳 Senegal</span>
-            </div>
-            
-            <h3>Rodada 3</h3>
-            
-            <div class="partida">
-                <span>🇵🇹 Portugal</span>
-                <input type="number" id="portugalSenegal" min="0">
-                <span>x</span>
-                <input type="number" id="senegalPortugal" min="0">
-                <span>🇸🇳 Senegal</span>
-            </div>
-            
-            <div class="partida">
-                <span>🇲🇽 México</span>
-                <input type="number" id="mexicoSuecia" min="0">
-                <span>x</span>
-                <input type="number" id="sueciaMexico" min="0">
-                <span>🇸🇪 Suécia</span>
-            </div>
-
-            <h2>⚽ Simulação Completa - Grupo H</h2>
-
-            <h3>Rodada 1</h3>
-            
-            <div class="partida">
-                <span>🇮🇹 Itália</span>
-                <input type="number" id="italia" min="0">
-                <span>x</span>
-                <input type="number" id="euaH" min="0">
-                <span>🇺🇸 Estados Unidos</span>
-            </div>
-            
-            <div class="partida">
-                <span>🇨🇴 Colômbia</span>
-                <input type="number" id="colombia" min="0">
-                <span>x</span>
-                <input type="number" id="novaZelandia" min="0">
+                <input type="number" id="novazelandia_r1" min="0">
                 <span>🇳🇿 Nova Zelândia</span>
             </div>
             
             <h3>Rodada 2</h3>
             
             <div class="partida">
-                <span>🇮🇹 Itália</span>
-                <input type="number" id="italiaColombia" min="0">
+                <span>🇧🇪 Bélgica</span>
+                <input type="number" id="belgica_r2" min="0">
                 <span>x</span>
-                <input type="number" id="colombiaItalia" min="0">
-                <span>🇨🇴 Colômbia</span>
+                <input type="number" id="ira_r2" min="0">
+                <span>🇮🇷 Irã</span>
             </div>
             
             <div class="partida">
-                <span>🇺🇸 Estados Unidos</span>
-                <input type="number" id="euaHNovaZelandia" min="0">
-                <span>x</span>
-                <input type="number" id="novaZelandiaEuaH" min="0">
                 <span>🇳🇿 Nova Zelândia</span>
+                <input type="number" id="novazelandia_r2" min="0">
+                <span>x</span>
+                <input type="number" id="egito_r2" min="0">
+                <span>🇪🇬 Egito</span>
             </div>
             
             <h3>Rodada 3</h3>
             
             <div class="partida">
-                <span>🇮🇹 Itália</span>
-                <input type="number" id="italiaNovaZelandia" min="0">
+                <span>🇪🇬 Egito</span>
+                <input type="number" id="egito_r3" min="0">
                 <span>x</span>
-                <input type="number" id="novaZelandiaItalia" min="0">
-                <span>🇳🇿 Nova Zelândia</span>
+                <input type="number" id="ira_r3" min="0">
+                <span>🇮🇷 Irã</span>
             </div>
             
             <div class="partida">
-                <span>🇺🇸 Estados Unidos</span>
-                <input type="number" id="euaHColombia" min="0">
+                <span>🇳🇿 Nova Zelândia</span>
+                <input type="number" id="novazelandia_r3" min="0">
                 <span>x</span>
-                <input type="number" id="colombiaEuaH" min="0">
-                <span>🇨🇴 Colômbia</span>
+                <input type="number" id="belgica_r3" min="0">
+                <span>🇧🇪 Bélgica</span>
             </div>
             
             <hr>
 
-        <section class="grupo">
+            <h2>⚽ Simulação Completa - Grupo H</h2>
+            
+            <h3>Rodada 1</h3>
+            
+            <div class="partida">
+                <span>🇪🇸 Espanha</span>
+                <input type="number" id="espanha_r1" min="0">
+                <span>x</span>
+                <input type="number" id="caboverde_r1" min="0">
+                <span>🇨🇻 Cabo Verde</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇸🇦 Arábia Saudita</span>
+                <input type="number" id="arabiasaudita_r1" min="0">
+                <span>x</span>
+                <input type="number" id="uruguai_r1" min="0">
+                <span>🇺🇾 Uruguai</span>
+            </div>
+            
+            <h3>Rodada 2</h3>
+            
+            <div class="partida">
+                <span>🇪🇸 Espanha</span>
+                <input type="number" id="espanha_r2" min="0">
+                <span>x</span>
+                <input type="number" id="arabiasaudita_r2" min="0">
+                <span>🇸🇦 Arábia Saudita</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇺🇾 Uruguai</span>
+                <input type="number" id="uruguai_r2" min="0">
+                <span>x</span>
+                <input type="number" id="caboverde_r2" min="0">
+                <span>🇨🇻 Cabo Verde</span>
+            </div>
+            
+            <h3>Rodada 3</h3>
+            
+            <div class="partida">
+                <span>🇨🇻 Cabo Verde</span>
+                <input type="number" id="caboverde_r3" min="0">
+                <span>x</span>
+                <input type="number" id="arabiasaudita_r3" min="0">
+                <span>🇸🇦 Arábia Saudita</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇺🇾 Uruguai</span>
+                <input type="number" id="uruguai_r3" min="0">
+                <span>x</span>
+                <input type="number" id="espanha_r3" min="0">
+                <span>🇪🇸 Espanha</span>
+            </div>
+            
+            <hr>
+            <h2>⚽ Simulação Completa - Grupo I</h2>
+<h3>Rodada 1</h3>
+<div class="partida">
+    <span>🇫🇷 França</span>
+    <input type="number" id="franca_r1" min="0">
+    <span>x</span>
+    <input type="number" id="senegal_r1" min="0">
+    <span>🇸🇳 Senegal</span>
+</div>
+<div class="partida">
+    <span>🇮🇶 Iraque</span>
+    <input type="number" id="iraque_i_r1" min="0">
+    <span>x</span>
+    <input type="number" id="noruega_r1" min="0">
+    <span>🇳🇴 Noruega</span>
+</div>
+<h3>Rodada 2</h3>
+<div class="partida">
+    <span>🇫🇷 França</span>
+    <input type="number" id="franca_r2" min="0">
+    <span>x</span>
+    <input type="number" id="iraque_i_r2" min="0">
+    <span>🇮🇶 Iraque</span>
+</div>
+<div class="partida">
+    <span>🇳🇴 Noruega</span>
+    <input type="number" id="noruega_r2" min="0">
+    <span>x</span>
+    <input type="number" id="senegal_r2" min="0">
+    <span>🇸🇳 Senegal</span>
+</div>
+<h3>Rodada 3</h3>
+<div class="partida">
+    <span>🇳🇴 Noruega</span>
+    <input type="number" id="noruega_r3" min="0">
+    <span>x</span>
+    <input type="number" id="franca_r3" min="0">
+    <span>🇫🇷 França</span>
+</div>
+<div class="partida">
+    <span>🇸🇳 Senegal</span>
+    <input type="number" id="senegal_r3" min="0">
+    <span>x</span>
+    <input type="number" id="iraque_i_r3" min="0">
+    <span>🇮🇶 Iraque</span>
+</div>
+<hr>
 
-            <h2>🏆 Grupo A</h2>
+            <h2>⚽ Simulação Completa - Grupo J</h2>
+<h3>Rodada 1</h3>
+<div class="partida">
+    <span>🇦🇷 Argentina</span>
+    <input type="number" id="argentina_r1" min="0">
+    <span>x</span>
+    <input type="number" id="austria_r1" min="0">
+    <span>🇦🇹 Áustria</span>
+</div>
+<div class="partida">
+    <span>🇩🇿 Argélia</span>
+    <input type="number" id="argelia_j_r1" min="0">
+    <span>x</span>
+    <input type="number" id="jordania_r1" min="0">
+    <span>🇯🇴 Jordânia</span>
+</div>
+<h3>Rodada 2</h3>
+<div class="partida">
+    <span>🇦🇷 Argentina</span>
+    <input type="number" id="argentina_r2" min="0">
+    <span>x</span>
+    <input type="number" id="argelia_j_r2" min="0">
+    <span>🇩🇿 Argélia</span>
+</div>
+<div class="partida">
+    <span>🇯🇴 Jordânia</span>
+    <input type="number" id="jordania_r2" min="0">
+    <span>x</span>
+    <input type="number" id="austria_r2" min="0">
+    <span>🇦🇹 Áustria</span>
+</div>
+<h3>Rodada 3</h3>
+<div class="partida">
+    <span>🇯🇴 Jordânia</span>
+    <input type="number" id="jordania_r3" min="0">
+    <span>x</span>
+    <input type="number" id="argentina_r3" min="0">
+    <span>🇦🇷 Argentina</span>
+</div>
+<div class="partida">
+    <span>🇦🇹 Áustria</span>
+    <input type="number" id="austria_r3" min="0">
+    <span>x</span>
+    <input type="number" id="argelia_j_r3" min="0">
+    <span>🇩🇿 Argélia</span>
+</div>
+<hr>
 
-            <div class="tabela-container">
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-                            <th>#</th>
-                            <th>Seleção</th>
-                            <th>PTS</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                        </tr>
-
-                    </thead>
-
-                    <tbody id="classificacaoA">
-
-                    </tbody>
-
-                </table>
-
+            <h2>⚽ Simulação Completa - Grupo K</h2>
+            
+            <h3>Rodada 1</h3>
+            
+            <div class="partida">
+                <span>🇵🇹 Portugal</span>
+                <input type="number" id="portugal_r1" min="0">
+                <span>x</span>
+                <input type="number" id="rdcongo_r1" min="0">
+                <span>🇨🇩 RD Congo</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇺🇿 Uzbequistão</span>
+                <input type="number" id="uzbequistao_r1" min="0">
+                <span>x</span>
+                <input type="number" id="colombia_r1" min="0">
+                <span>🇨🇴 Colômbia</span>
+            </div>
+            
+            <h3>Rodada 2</h3>
+            
+            <div class="partida">
+                <span>🇵🇹 Portugal</span>
+                <input type="number" id="portugal_r2" min="0">
+                <span>x</span>
+                <input type="number" id="uzbequistao_r2" min="0">
+                <span>🇺🇿 Uzbequistão</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇨🇴 Colômbia</span>
+                <input type="number" id="colombia_r2" min="0">
+                <span>x</span>
+                <input type="number" id="rdcongo_r2" min="0">
+                <span>🇨🇩 RD Congo</span>
+            </div>
+            
+            <h3>Rodada 3</h3>
+            
+            <div class="partida">
+                <span>🇨🇴 Colômbia</span>
+                <input type="number" id="colombia_r3" min="0">
+                <span>x</span>
+                <input type="number" id="portugal_r3" min="0">
+                <span>🇵🇹 Portugal</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇨🇩 RD Congo</span>
+                <input type="number" id="rdcongo_r3" min="0">
+                <span>x</span>
+                <input type="number" id="uzbequistao_r3" min="0">
+                <span>🇺🇿 Uzbequistão</span>
+            </div>
+            
+            <hr>
+            <h2>⚽ Simulação Completa - Grupo L</h2>
+            
+            <h3>Rodada 1</h3>
+            
+            <div class="partida">
+                <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra</span>
+                <input type="number" id="inglaterra_l_r1" min="0">
+                <span>x</span>
+                <input type="number" id="croacia_r1" min="0">
+                <span>🇭🇷 Croácia</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇬🇭 Gana</span>
+                <input type="number" id="gana_r1" min="0">
+                <span>x</span>
+                <input type="number" id="panama_r1" min="0">
+                <span>🇵🇦 Panamá</span>
+            </div>
+            
+            <h3>Rodada 2</h3>
+            
+            <div class="partida">
+                <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra</span>
+                <input type="number" id="inglaterra_l_r2" min="0">
+                <span>x</span>
+                <input type="number" id="gana_r2" min="0">
+                <span>🇬🇭 Gana</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇵🇦 Panamá</span>
+                <input type="number" id="panama_r2" min="0">
+                <span>x</span>
+                <input type="number" id="croacia_r2" min="0">
+                <span>🇭🇷 Croácia</span>
+            </div>
+            
+            <h3>Rodada 3</h3>
+            
+            <div class="partida">
+                <span>🇭🇷 Croácia</span>
+                <input type="number" id="croacia_r3" min="0">
+                <span>x</span>
+                <input type="number" id="gana_r3" min="0">
+                <span>🇬🇭 Gana</span>
+            </div>
+            
+            <div class="partida">
+                <span>🇵🇦 Panamá</span>
+                <input type="number" id="panama_r3" min="0">
+                <span>x</span>
+                <input type="number" id="inglaterra_l_r3" min="0">
+                <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra</span>
             </div>
 
         </section>
 
-        <section class="grupo">
-
-            <h2>🏆 Grupo B</h2>
-        
-            <div class="tabela-container">
-        
-                <table>
-        
-                    <thead>
-        
-                        <tr>
-                            <th>#</th>
-                            <th>Seleção</th>
-                            <th>PTS</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                        </tr>
-        
-                    </thead>
-        
-                    <tbody id="classificacaoB">
-        
-                    </tbody>
-        
-                </table>
-                 
-            </div>
-        
-        </section>
-        <section class="grupo">
-
-            <h2>🏆 Grupo C</h2>
-        
-            <div class="tabela-container">
-        
-                <table>
-        
-                    <thead>
-        
-                        <tr>
-                            <th>#</th>
-                            <th>Seleção</th>
-                            <th>PTS</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                        </tr>
-        
-                    </thead>
-        
-                    <tbody id="classificacaoC"></tbody>
-        
-                </table>
-        
-            </div>
-        
-        </section>
-        
-        <section class="grupo">
-        
-            <h2>🏆 Grupo D</h2>
-        
-            <div class="tabela-container">
-        
-                <table>
-        
-                    <thead>
-        
-                        <tr>
-                            <th>#</th>
-                            <th>Seleção</th>
-                            <th>PTS</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                        </tr>
-        
-                    </thead>
-        
-                    <tbody id="classificacaoD"></tbody>
-        
-                </table>
-        
-            </div>
-        
-        </section>
-        
-        <section class="grupo">
-        
-            <h2>🏆 Grupo E</h2>
-        
-            <div class="tabela-container">
-        
-                <table>
-        
-                    <thead>
-        
-                        <tr>
-                            <th>#</th>
-                            <th>Seleção</th>
-                            <th>PTS</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                        </tr>
-        
-                    </thead>
-        
-                    <tbody id="classificacaoE"></tbody>
-        
-                </table>
-        
-            </div>
-        
-        </section>
-        
-        <section class="grupo">
-        
-            <h2>🏆 Grupo F</h2>
-        
-            <div class="tabela-container">
-        
-                <table>
-        
-                    <thead>
-        
-                        <tr>
-                            <th>#</th>
-                            <th>Seleção</th>
-                            <th>PTS</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                        </tr>
-        
-                    </thead>
-        
-                    <tbody id="classificacaoF"></tbody>
-        
-                </table>
-        
-            </div>
-        
-        </section>
-        
-        <section class="grupo">
-        
-            <h2>🏆 Grupo G</h2>
-        
-            <div class="tabela-container">
-        
-                <table>
-        
-                    <thead>
-        
-                        <tr>
-                            <th>#</th>
-                            <th>Seleção</th>
-                            <th>PTS</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                        </tr>
-        
-                    </thead>
-        
-                    <tbody id="classificacaoG"></tbody>
-        
-                </table>
-        
-            </div>
-        
-        </section>
-        
-        <section class="grupo">
-        
-            <h2>🏆 Grupo H</h2>
-        
-            <div class="tabela-container">
-        
-                <table>
-        
-                    <thead>
-        
-                        <tr>
-                            <th>#</th>
-                            <th>Seleção</th>
-                            <th>PTS</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                            <th>GP</th>
-                            <th>GC</th>
-                            <th>SG</th>
-                        </tr>
-        
-                    </thead>
-        
-                    <tbody id="classificacaoH"></tbody>
-        
-                </table>
-        
-            </div>
-        
-        </section>
+        <!-- Área limpa reservada para o JavaScript desenhar as tabelas automáticas -->
+        <section id="container-classificacao" class="tabelas-classificacao"></section>
 
     </main>
 
+    <!-- Barra unificada com os botões para aplicar o efeito fixo e flutuante do seu CSS -->
+    <div class="botoes-flutuantes">
+        <button id="simular">Atualizar Classificação</button>
+        <button id="limpar">🗑 Nova Simulação</button>
+    </div>
+
+    <!-- Chamada ativa do arquivo JavaScript -->
     <script src="script.js"></script>
 
 </body>
-
 </html>

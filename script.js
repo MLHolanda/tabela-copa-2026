@@ -1,987 +1,456 @@
+// ==========================================
+// PARTE 1: DECLARAÇÃO DOS GRUPOS E SELEÇÕES
+// ==========================================
+
 const grupoA = [
-  {
-    nome: "🇿🇦 África do Sul",
-    pontos: 0,
-    jogos: 0,
-    vitorias: 0,
-    empates: 0,
-    derrotas: 0,
-    golsPro: 0,
-    golsContra: 0,
-    saldo: 0
-  },
-  {
-    nome: "🇲🇽 México",
-    pontos: 0,
-    jogos: 0,
-    vitorias: 0,
-    empates: 0,
-    derrotas: 0,
-    golsPro: 0,
-    golsContra: 0,
-    saldo: 0
-  },
-  {
-   nome: "🇰🇷 Coreia do Sul",
-    pontos: 0,
-    jogos: 0,
-    vitorias: 0,
-    empates: 0,
-    derrotas: 0,
-    golsPro: 0,
-    golsContra: 0,
-    saldo: 0
-
-  },
-  {
-    nome: "🇨🇿 República Tcheca",
-    pontos: 0,
-    jogos: 0,
-    vitorias: 0,
-    empates: 0,
-    derrotas: 0,
-    golsPro: 0,
-    golsContra: 0,
-    saldo: 0
-  }
+    { nome: "🇲🇽 México", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇿🇦 África do Sul", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇰🇷 Coreia do Sul", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇨🇿 República Tcheca", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
+
 const grupoB = [
-
-    {
-        nome: "🇫🇷 França",
-        pontos: 0,
-        jogos: 0,
-        vitorias: 0,
-        empates: 0,
-        derrotas: 0,
-        golsPro: 0,
-        golsContra: 0,
-        saldo: 0
-    },
-
-    {
-        nome: "🇺🇸 Estados Unidos",
-        pontos: 0,
-        jogos: 0,
-        vitorias: 0,
-        empates: 0,
-        derrotas: 0,
-        golsPro: 0,
-        golsContra: 0,
-        saldo: 0
-    },
-
-    {
-        nome: "🇰🇷 Coreia do Sul",
-        pontos: 0,
-        jogos: 0,
-        vitorias: 0,
-        empates: 0,
-        derrotas: 0,
-        golsPro: 0,
-        golsContra: 0,
-        saldo: 0
-    },
-
-    {
-        nome: "🇳🇬 Nigéria",
-        pontos: 0,
-        jogos: 0,
-        vitorias: 0,
-        empates: 0,
-        derrotas: 0,
-        golsPro: 0,
-        golsContra: 0,
-        saldo: 0
-    }
-
+    { nome: "🇨🇦 Canadá", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇧🇦 Bósnia e Herzegovina", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇶🇦 Catar", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇨🇭 Suíça", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
+
 const grupoC = [
     { nome: "🇧🇷 Brasil", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
     { nome: "🇲🇦 Marrocos", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
     { nome: "🇭🇹 Haiti", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🏴 Escócia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+    { nome: "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escócia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
 
 const grupoD = [
-    { nome: "🇦🇷 Argentina", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇩🇰 Dinamarca", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇪🇬 Egito", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇨🇷 Costa Rica", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+    { nome: "🇺🇸 Estados Unidos", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇵🇾 Paraguai", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇦🇺 Austrália", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇹🇷 Turquia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
 
 const grupoE = [
-    { nome: "🇪🇸 Espanha", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇨🇭 Suíça", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇲🇦 Marrocos", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇦🇺 Austrália", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+    { nome: "🇩🇪 Alemanha", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇨🇼 Curaçao", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇨🇮 Costa do Marfim", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇪🇨 Equador", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
 
 const grupoF = [
-    { nome: "🇩🇪 Alemanha", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇺🇾 Uruguai", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇯🇵 Japão", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇨🇲 Camarões", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+    { nome: "🇳🇱 Holanda", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇮🇶 Iraque", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇩🇿 Argélia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇵🇪 Peru", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
 
 const grupoG = [
-    { nome: "🇵🇹 Portugal", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇲🇽 México", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇸🇪 Suécia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇸🇳 Senegal", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+    { nome: "🇧🇪 Bélgica", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇪🇬 Egito", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇮🇷 Irã", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇳🇿 Nova Zelândia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
 
 const grupoH = [
-    { nome: "🇮🇹 Itália", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇺🇸 Estados Unidos", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇨🇴 Colômbia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇳🇿 Nova Zelândia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+    { nome: "🇪🇸 Espanha", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇨🇻 Cabo Verde", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇸🇦 Arábia Saudita", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇺🇾 Uruguai", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
+
+const grupoI = [
+    { nome: "🇫🇷 França", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇸🇳 Senegal", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇮🇶 Iraque", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇳🇴 Noruega", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+];
+
+const grupoJ = [
+    { nome: "🇦🇷 Argentina", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇦🇹 Áustria", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇩🇿 Argélia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇯🇴 Jordânia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+];
+
+const grupoK = [
+    { nome: "🇵🇹 Portugal", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇨🇩 RD Congo", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇺🇿 Uzbequistão", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇨🇴 Colômbia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+];
+
+const grupoL = [
+    { nome: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇭🇷 Croácia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇬🇭 Gana", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+    { nome: "🇵🇦 Panamá", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+];
+
 const grupos = {
-
-    A: grupoA,
-    B: grupoB,
-    C: grupoC,
-    D: grupoD,
-    E: grupoE,
-    F: grupoF,
-    G: grupoG,
-    H: grupoH
-
+    A: grupoA, B: grupoB, C: grupoC, D: grupoD,
+    E: grupoE, F: grupoF, G: grupoG, H: grupoH,
+    I: grupoI, J: grupoJ, K: grupoK, L: grupoL
 };
-function carregarDados() {
 
-    const dados =
-        JSON.parse(
-            localStorage.getItem("grupoA")
-        );
+// ==========================================
+// FUNÇÕES DE UTILIDADE E CONTROLE BASE
+// ==========================================
 
-    if (!dados) return;
-
-    document.getElementById("mexico").value =
-        dados.mexico || "";
-
-    document.getElementById("africadosul").value =
-        dados.africadosul || "";
-
-    document.getElementById("coreiadosul").value =
-        dados.coreiadosul || "";
-
-    document.getElementById("republicatcheca").value =
-        dados.republicatcheca || "";
-
-    document.getElementById("japaoCamaroes").value =
-        dados.japaoCamaroes || "";
-
-    document.getElementById("camaroesJapao").value =
-        dados.camaroesJapao || "";
-
-    document.getElementById("brasilCamaroes").value =
-        dados.brasilCamaroes || "";
-
-    document.getElementById("camaroesBrasil").value =
-        dados.camaroesBrasil || "";
-
-    document.getElementById("mexicoJapao").value =
-        dados.mexicoJapao || "";
-
-    document.getElementById("japaoMexico").value =
-        dados.japaoMexico || "";
-
+function zerarTodosOsGrupos() {
+    Object.values(grupos).forEach(grupo => {
+        grupo.forEach(time => {
+            time.pontos = 0; time.jogos = 0; time.vitorias = 0;
+            time.empates = 0; time.derrotas = 0; time.golsPro = 0;
+            time.golsContra = 0; time.saldo = 0;
+        });
+    });
 }
 
-
-function zerarGrupo(grupo) {
-
-    grupo.forEach(time => {
-  
-      time.pontos = 0;
-      time.jogos = 0;
-      time.vitorias = 0;
-      time.empates = 0;
-      time.derrotas = 0;
-      time.golsPro = 0;
-      time.golsContra = 0;
-      time.saldo = 0;
-  
-    });
-  
-  }
-
-  function ordenarGrupo(grupo) {
-
+function ordenarGrupo(grupo) {
     grupo.sort((a, b) => {
-
-        if (b.pontos !== a.pontos) {
-            return b.pontos - a.pontos;
-        }
-
-        return b.saldo - a.saldo;
-
+        if (b.pontos !== a.pontos) return b.pontos - a.pontos;
+        if (b.saldo !== a.saldo) return b.saldo - a.saldo;
+        return b.golsPro - a.golsPro; // Terceiro critério de desempate: gols pró
     });
-
 }
 
-function processarJogo(timeA, golsA, timeB, golsB) {
-  timeA.jogos++;
-  timeB.jogos++;
-
-  timeA.golsPro += golsA;
-  timeA.golsContra += golsB;
-
-  timeB.golsPro += golsB;
-  timeB.golsContra += golsA;
-
-  timeA.saldo += golsA - golsB;
-  timeB.saldo += golsB - golsA;
-
-  if (golsA > golsB) {
-    timeA.pontos += 3;
-    timeA.vitorias++;
-    timeB.derrotas++;
-  } else if (golsA < golsB) {
-    timeB.pontos += 3;
-    timeB.vitorias++;
-    timeA.derrotas++;
-  } else {
-    timeA.pontos++;
-    timeB.pontos++;
-    timeA.empates++;
-    timeB.empates++;
-  }
-}
 function jogoPreenchido(idA, idB) {
-
-    const valorA =
-        document.getElementById(idA).value;
-
-    const valorB =
-        document.getElementById(idB).value;
-
-    return valorA !== "" && valorB !== "";
-
+    const elA = document.getElementById(idA);
+    const elB = document.getElementById(idB);
+    if (!elA || !elB) return false;
+    return elA.value !== "" && elB.value !== "";
 }
-function processarPartida(idA, idB, timeA, timeB, golsA, golsB) {
 
-    if (jogoPreenchido(idA, idB)) {
+function processarJogo(timeA, idA, timeB, idB) {
+    if (!jogoPreenchido(idA, idB)) return;
 
-        processarJogo(
-            timeA,
-            golsA,
-            timeB,
-            golsB
-        );
+    const golsA = Number(document.getElementById(idA).value);
+    const golsB = Number(document.getElementById(idB).value);
 
+    timeA.jogos++; timeB.jogos++;
+    timeA.golsPro += golsA; timeA.golsContra += golsB;
+    timeB.golsPro += golsB; timeB.golsContra += golsA;
+    timeA.saldo += golsA - golsB; timeB.saldo += golsB - golsA;
+
+    if (golsA > golsB) {
+        timeA.pontos += 3; timeA.vitorias++; timeB.derrotas++;
+    } else if (golsA < golsB) {
+        timeB.pontos += 3; timeB.vitorias++; timeA.derrotas++;
+    } else {
+        timeA.pontos++; timeB.pontos++; timeA.empates++; timeB.empates++;
     }
-
 }
-
-document.getElementById("simular").addEventListener("click", () => {
-
-    zerarGrupo(grupoA);
-    zerarGrupo(grupoB);
-  const mexico = Number(document.getElementById("mexico").value || 0);
-  const africadosul = Number(document.getElementById("africadosul").value || 0);
-
-  const coreiadosul = Number(document.getElementById("coreiadosul").value || 0);
-  const republicatcheca = Number(document.getElementById("republicatcheca").value || 0);
-
-  const republicatchecaAfricaDoSul = Number(document.getElementById("coreiadosul").value || 0);
-  const africadosulRepublicaTcheca = Number(document.getElementById("republicatcheca").value || 0);
-
-  const mexicoCoreiaDoSul = Number(document.getElementById("japaoCamaroes").value || 0);
-  const coreiaDoSulMexico = Number(document.getElementById("camaroesJapao").value || 0);
-
-  const republicatchecaMexico = Number(document.getElementById("brasilCamaroes").value || 0);
-  const mexicoRepublicaTcheca = Number(document.getElementById("camaroesBrasil").value || 0);
-
-  const africadosulCoreiaDoSul = Number(document.getElementById("mexicoJapao").value || 0);
-  const coreiaDoSulAfricaDoSul = Number(document.getElementById("japaoMexico").value || 0);
-  const franca = Number(document.getElementById("franca").value || 0);
-  const eua = Number(document.getElementById("eua").value || 0);
-  const coreia = Number(document.getElementById("coreia").value || 0);
-  const nigeria = Number(document.getElementById("nigeria").value || 0);
-
-  const francaCoreia = Number(document.getElementById("francaCoreia").value || 0);
-  const coreiaFranca = Number(document.getElementById("coreiaFranca").value || 0);
-
-  const euaNigeria = Number(document.getElementById("euaNigeria").value || 0);
-  const nigeriaEua = Number(document.getElementById("nigeriaEua").value || 0);
-
-  const francaNigeria = Number(document.getElementById("francaNigeria").value || 0);
-  const nigeriaFranca = Number(document.getElementById("nigeriaFranca").value || 0);
-
-  const euaCoreia = Number(document.getElementById("euaCoreia").value || 0);
-  const coreiaEua = Number(document.getElementById("coreiaEua").value || 0);
-  const brasilC = Number(document.getElementById("brasil").value || 0);
-  const marrocosC = Number(document.getElementById("marrocos").value || 0);
-
-  const haitiC = Number(document.getElementById("haiti").value || 0);
-  const escociaC = Number(document.getElementById("escocia").value || 0);
-
-  const escociaMarrocos = Number(document.getElementById("escociaMarrocos").value || 0);
-  const marrocosEscocia = Number(document.getElementById("marrocosEscocia").value || 0);
-
-  const brasilHaiti = Number(document.getElementById("brasilHaiti").value || 0);
-  const haitiBrasil = Number(document.getElementById("haitiBrasil").value || 0);
-
-  const escociaBrasil = Number(document.getElementById("escociaBrasil").value || 0);
-  const brasilEscocia = Number(document.getElementById("brasilEscocia").value || 0);
-
-  const marrocosHaiti = Number(document.getElementById("marrocosHaiti").value || 0);
-  const haitiMarrocos = Number(document.getElementById("haitiMarrocos").value || 0);;
-  const argentina = Number(document.getElementById("argentina").value || 0);
-  const dinamarca = Number(document.getElementById("dinamarca").value || 0);
-
-  const egito = Number(document.getElementById("egito").value || 0);
-  const costaRica = Number(document.getElementById("costaRica").value || 0);
-
-  const argentinaEgito = Number(document.getElementById("argentinaEgito").value || 0);
-  const egitoArgentina = Number(document.getElementById("egitoArgentina").value || 0);
-
-  const dinamarcaCostaRica = Number(document.getElementById("dinamarcaCostaRica").value || 0);
-  const costaRicaDinamarca = Number(document.getElementById("costaRicaDinamarca").value || 0);
-
-  const argentinaCostaRica = Number(document.getElementById("argentinaCostaRica").value || 0);
-  const costaRicaArgentina = Number(document.getElementById("costaRicaArgentina").value || 0);
-
-  const dinamarcaEgito = Number(document.getElementById("dinamarcaEgito").value || 0);
-  const egitoDinamarca = Number(document.getElementById("egitoDinamarca").value || 0);
-  const espanha = Number(document.getElementById("espanha").value || 0);
-  const suica = Number(document.getElementById("suica").value || 0);
-
-  const marrocos = Number(document.getElementById("marrocos").value || 0);
-  const australia = Number(document.getElementById("australia").value || 0);
-
-  const espanhaMarrocos = Number(document.getElementById("espanhaMarrocos").value || 0);
-  const marrocosEspanha = Number(document.getElementById("marrocosEspanha").value || 0);
-
-  const suicaAustralia = Number(document.getElementById("suicaAustralia").value || 0);
-  const australiaSuica = Number(document.getElementById("australiaSuica").value || 0);
-
-  const espanhaAustralia = Number(document.getElementById("espanhaAustralia").value || 0);
-  const australiaEspanha = Number(document.getElementById("australiaEspanha").value || 0);
-
-  const suicaMarrocos = Number(document.getElementById("suicaMarrocos").value || 0);
-  const marrocosSuica = Number(document.getElementById("marrocosSuica").value || 0);
-  const alemanha = Number(document.getElementById("alemanha").value || 0);
-  const uruguai = Number(document.getElementById("uruguai").value || 0);
-
-  const japaoF = Number(document.getElementById("japaoF").value || 0);
-  const camaroesF = Number(document.getElementById("camaroesF").value || 0);
-
-  const alemanhaJapao = Number(document.getElementById("alemanhaJapao").value || 0);
-  const japaoAlemanha = Number(document.getElementById("japaoAlemanha").value || 0);
-
-  const uruguaiCamaroes = Number(document.getElementById("uruguaiCamaroes").value || 0);
-  const camaroesUruguai = Number(document.getElementById("camaroesUruguai").value || 0);
-
-  const alemanhaCamaroes = Number(document.getElementById("alemanhaCamaroes").value || 0);
-  const camaroesAlemanha = Number(document.getElementById("camaroesAlemanha").value || 0);
-
-  const uruguaiJapao = Number(document.getElementById("uruguaiJapao").value || 0);
-  const japaoUruguai = Number(document.getElementById("japaoUruguai").value || 0);
-  const portugal = Number(document.getElementById("portugal").value || 0);
-  const mexicoG = Number(document.getElementById("mexicoG").value || 0);
-
-  const suecia = Number(document.getElementById("suecia").value || 0);
-  const senegal = Number(document.getElementById("senegal").value || 0);
-
-  const portugalSuecia = Number(document.getElementById("portugalSuecia").value || 0);
-  const sueciaPortugal = Number(document.getElementById("sueciaPortugal").value || 0);
-
-  const mexicoSenegal = Number(document.getElementById("mexicoSenegal").value || 0);
-  const senegalMexico = Number(document.getElementById("senegalMexico").value || 0);
-
-  const portugalSenegal = Number(document.getElementById("portugalSenegal").value || 0);
-  const senegalPortugal = Number(document.getElementById("senegalPortugal").value || 0);
-
-  const mexicoSuecia = Number(document.getElementById("mexicoSuecia").value || 0);
-  const sueciaMexico = Number(document.getElementById("sueciaMexico").value || 0);
-  const italia = Number(document.getElementById("italia").value || 0);
-  const euaH = Number(document.getElementById("euaH").value || 0);
-
-  const colombia = Number(document.getElementById("colombia").value || 0);
-  const novaZelandia = Number(document.getElementById("novaZelandia").value || 0);
-
-  const italiaColombia = Number(document.getElementById("italiaColombia").value || 0);
-  const colombiaItalia = Number(document.getElementById("colombiaItalia").value || 0);
-
-  const euaHNovaZelandia = Number(document.getElementById("euaHNovaZelandia").value || 0);
-  const novaZelandiaEuaH = Number(document.getElementById("novaZelandiaEuaH").value || 0);
-
-  const italiaNovaZelandia = Number(document.getElementById("italiaNovaZelandia").value || 0);
-  const novaZelandiaItalia = Number(document.getElementById("novaZelandiaItalia").value || 0);
-
-  const euaHColombia = Number(document.getElementById("euaHColombia").value || 0);
-  const colombiaEuaH = Number(document.getElementById("colombiaEuaH").value || 0);
-  const timeAfricaDoSul = grupoA.find(t => t.nome.includes("África"));
-  const timeMexico = grupoA.find(t => t.nome.includes("México"));
-  const timeCoreiaDoSul = grupoA.find(t => t.nome.includes("Coreia"));
-  const timeRepublicaTcheca = grupoA.find(t => t.nome.includes("República"));
-  const timeFranca = grupoB.find(t => t.nome.includes("França"));
-  const timeEua = grupoB.find(t => t.nome.includes("Estados Unidos"));
-  const timeCoreia = grupoB.find(t => t.nome.includes("Coreia"));
-  const timeNigeria = grupoB.find(t => t.nome.includes("Nigéria"));
-  const timeBrasilC = grupoC.find(t => t.nome.includes("Brasil"));
-  const timeMarrocosC = grupoC.find(t => t.nome.includes("Marrocos"));
-  const timeHaiti = grupoC.find(t => t.nome.includes("Haiti"));
-  const timeEscocia = grupoC.find(t => t.nome.includes("Escócia"));
-  const timeArgentina = grupoD.find(t => t.nome.includes("Argentina"));
-  const timeDinamarca = grupoD.find(t => t.nome.includes("Dinamarca"));
-  const timeEgito = grupoD.find(t => t.nome.includes("Egito"));
-  const timeCostaRica = grupoD.find(t => t.nome.includes("Costa Rica"));
-  const timeEspanha = grupoE.find(t => t.nome.includes("Espanha"));
-  const timeSuica = grupoE.find(t => t.nome.includes("Suíça"));
-  const timeMarrocos = grupoE.find(t => t.nome.includes("Marrocos"));
-  const timeAustralia = grupoE.find(t => t.nome.includes("Austrália"));
-  const timeAlemanha = grupoF.find(t => t.nome.includes("Alemanha"));
-  const timeUruguai = grupoF.find(t => t.nome.includes("Uruguai"));
-  const timeJapaoF = grupoF.find(t => t.nome.includes("Japão"));
-  const timeCamaroesF = grupoF.find(t => t.nome.includes("Camarões"));
-  const timePortugal = grupoG.find(t => t.nome.includes("Portugal"));
-  const timeMexicoG = grupoG.find(t => t.nome.includes("México"));
-  const timeSuecia = grupoG.find(t => t.nome.includes("Suécia"));
-  const timeSenegal = grupoG.find(t => t.nome.includes("Senegal"));
-  const timeItalia = grupoH.find(t => t.nome.includes("Itália"));
-  const timeEuaH = grupoH.find(t => t.nome.includes("Estados Unidos"));
-  const timeColombia = grupoH.find(t => t.nome.includes("Colômbia"));
-  const timeNovaZelandia = grupoH.find(t => t.nome.includes("Nova Zelândia"));
-  processarPartida(
-    "mexico",
-    "africadosul",
-    timeMexico,
-    timeAfricaDoSul,
-    mexico,
-    africadosul
-);
-
-processarPartida(
-    "coreiadosul",
-    "republicatcheca",
-    timeCoreiaDoSul,
-    timeRepublicaTcheca,
-    coreiadosul,
-    republicatcheca
-);
-
-processarPartida(
-    "coreiadosul",
-    "republicatcheca",
-    timeCoreiaDoSul,
-    timeRepublicaTcheca,
-    republicatchecaAfricaDoSul,
-    africadosulRepublicaTcheca
-);
-
-processarPartida(
-    "japaoCamaroes",
-    "camaroesJapao",
-    timeMexico,
-    timeCoreiaDoSul,
-    mexicoCoreiaDoSul,
-    coreiaDoSulMexico
-);
-
-processarPartida(
-    "brasilCamaroes",
-    "camaroesBrasil",
-    timeRepublicaTcheca,
-    timeMexico,
-    republicatchecaMexico,
-    mexicoRepublicaTcheca
-);
-
-processarPartida(
-    "mexicoJapao",
-    "japaoMexico",
-    timeAfricaDoSul,
-    timeCoreiaDoSul,
-    africadosulCoreiaDoSul,
-    coreiaDoSulAfricaDoSul
-);
-processarPartida(
-    "franca",
-    "eua",
-    timeFranca,
-    timeEua,
-    franca,
-    eua
-);
-processarPartida(
-    "coreia",
-    "nigeria",
-    timeCoreia,
-    timeNigeria,
-    coreia,
-    nigeria
-);
-
-processarPartida(
-    "francaCoreia",
-    "coreiaFranca",
-    timeFranca,
-    timeCoreia,
-    francaCoreia,
-    coreiaFranca
-);
-
-processarPartida(
-    "euaNigeria",
-    "nigeriaEua",
-    timeEua,
-    timeNigeria,
-    euaNigeria,
-    nigeriaEua
-);
-
-processarPartida(
-    "francaNigeria",
-    "nigeriaFranca",
-    timeFranca,
-    timeNigeria,
-    francaNigeria,
-    nigeriaFranca
-);
-
-processarPartida(
-    "euaCoreia",
-    "coreiaEua",
-    timeEua,
-    timeCoreia,
-    euaCoreia,
-    coreiaEua
-);
-processarPartida(
-    "brasil",
-    "marrocos",
-    timeBrasilC,
-    timeMarrocosC,
-    brasilC,
-    marrocosC
-);
-processarPartida(
-    "haiti",
-    "escocia",
-    timeHaiti,
-    timeEscocia,
-    haitiC,
-    escociaC
-);
-processarPartida(
-    "escociaMarrocos",
-    "marrocosEscocia",
-    timeEscocia,
-    timeMarrocosC,
-    escociaMarrocos,
-    marrocosEscocia
-);
-
-processarPartida(
-    "brasilHaiti",
-    "haitiBrasil",
-    timeBrasilC,
-    timeHaiti,
-    brasilHaiti,
-    haitiBrasil
-);
-
-processarPartida(
-    "escociaBrasil",
-    "brasilEscocia",
-    timeEscocia,
-    timeBrasilC,
-    escociaBrasil,
-    brasilEscocia
-);
-
-processarPartida(
-    "marrocosHaiti",
-    "haitiMarrocos",
-    timeMarrocosC,
-    timeHaiti,
-    marrocosHaiti,
-    haitiMarrocos
-);
-processarPartida(
-    "argentina",
-    "dinamarca",
-    timeArgentina,
-    timeDinamarca,
-    argentina,
-    dinamarca
-);
-
-processarPartida(
-    "egito",
-    "costaRica",
-    timeEgito,
-    timeCostaRica,
-    egito,
-    costaRica
-);
-
-processarPartida(
-    "argentinaEgito",
-    "egitoArgentina",
-    timeArgentina,
-    timeEgito,
-    argentinaEgito,
-    egitoArgentina
-);
-
-processarPartida(
-    "dinamarcaCostaRica",
-    "costaRicaDinamarca",
-    timeDinamarca,
-    timeCostaRica,
-    dinamarcaCostaRica,
-    costaRicaDinamarca
-);
-
-processarPartida(
-    "argentinaCostaRica",
-    "costaRicaArgentina",
-    timeArgentina,
-    timeCostaRica,
-    argentinaCostaRica,
-    costaRicaArgentina
-);
-
-processarPartida(
-    "dinamarcaEgito",
-    "egitoDinamarca",
-    timeDinamarca,
-    timeEgito,
-    dinamarcaEgito,
-    egitoDinamarca
-);
-processarPartida(
-    "espanha",
-    "suica",
-    timeEspanha,
-    timeSuica,
-    espanha,
-    suica
-);
-
-processarPartida(
-    "marrocos",
-    "australia",
-    timeMarrocos,
-    timeAustralia,
-    marrocos,
-    australia
-);
-
-processarPartida(
-    "espanhaMarrocos",
-    "marrocosEspanha",
-    timeEspanha,
-    timeMarrocos,
-    espanhaMarrocos,
-    marrocosEspanha
-);
-
-processarPartida(
-    "suicaAustralia",
-    "australiaSuica",
-    timeSuica,
-    timeAustralia,
-    suicaAustralia,
-    australiaSuica
-);
-
-processarPartida(
-    "espanhaAustralia",
-    "australiaEspanha",
-    timeEspanha,
-    timeAustralia,
-    espanhaAustralia,
-    australiaEspanha
-);
-
-processarPartida(
-    "suicaMarrocos",
-    "marrocosSuica",
-    timeSuica,
-    timeMarrocos,
-    suicaMarrocos,
-    marrocosSuica
-);
-processarPartida(
-    "alemanha",
-    "uruguai",
-    timeAlemanha,
-    timeUruguai,
-    alemanha,
-    uruguai
-);
-
-processarPartida(
-    "japaoF",
-    "camaroesF",
-    timeJapaoF,
-    timeCamaroesF,
-    japaoF,
-    camaroesF
-);
-
-processarPartida(
-    "alemanhaJapao",
-    "japaoAlemanha",
-    timeAlemanha,
-    timeJapaoF,
-    alemanhaJapao,
-    japaoAlemanha
-);
-
-processarPartida(
-    "uruguaiCamaroes",
-    "camaroesUruguai",
-    timeUruguai,
-    timeCamaroesF,
-    uruguaiCamaroes,
-    camaroesUruguai
-);
-
-processarPartida(
-    "alemanhaCamaroes",
-    "camaroesAlemanha",
-    timeAlemanha,
-    timeCamaroesF,
-    alemanhaCamaroes,
-    camaroesAlemanha
-);
-
-processarPartida(
-    "uruguaiJapao",
-    "japaoUruguai",
-    timeUruguai,
-    timeJapaoF,
-    uruguaiJapao,
-    japaoUruguai
-);
-processarPartida(
-    "portugal",
-    "mexicoG",
-    timePortugal,
-    timeMexicoG,
-    portugal,
-    mexicoG
-);
-
-processarPartida(
-    "suecia",
-    "senegal",
-    timeSuecia,
-    timeSenegal,
-    suecia,
-    senegal
-);
-
-processarPartida(
-    "portugalSuecia",
-    "sueciaPortugal",
-    timePortugal,
-    timeSuecia,
-    portugalSuecia,
-    sueciaPortugal
-);
-
-processarPartida(
-    "mexicoSenegal",
-    "senegalMexico",
-    timeMexicoG,
-    timeSenegal,
-    mexicoSenegal,
-    senegalMexico
-);
-
-processarPartida(
-    "portugalSenegal",
-    "senegalPortugal",
-    timePortugal,
-    timeSenegal,
-    portugalSenegal,
-    senegalPortugal
-);
-
-processarPartida(
-    "mexicoSuecia",
-    "sueciaMexico",
-    timeMexicoG,
-    timeSuecia,
-    mexicoSuecia,
-    sueciaMexico
-);
-processarPartida(
-    "italia",
-    "euaH",
-    timeItalia,
-    timeEuaH,
-    italia,
-    euaH
-);
-
-processarPartida(
-    "colombia",
-    "novaZelandia",
-    timeColombia,
-    timeNovaZelandia,
-    colombia,
-    novaZelandia
-);
-
-processarPartida(
-    "italiaColombia",
-    "colombiaItalia",
-    timeItalia,
-    timeColombia,
-    italiaColombia,
-    colombiaItalia
-);
-
-processarPartida(
-    "euaHNovaZelandia",
-    "novaZelandiaEuaH",
-    timeEuaH,
-    timeNovaZelandia,
-    euaHNovaZelandia,
-    novaZelandiaEuaH
-);
-
-processarPartida(
-    "italiaNovaZelandia",
-    "novaZelandiaItalia",
-    timeItalia,
-    timeNovaZelandia,
-    italiaNovaZelandia,
-    novaZelandiaItalia
-);
-
-processarPartida(
-    "euaHColombia",
-    "colombiaEuaH",
-    timeEuaH,
-    timeColombia,
-    euaHColombia,
-    colombiaEuaH
-);
-ordenarGrupo(grupoE);
-renderizarGrupo(grupoE, "classificacaoE");
-ordenarGrupo(grupoA);
-ordenarGrupo(grupoB);
-ordenarGrupo(grupoC);
-ordenarGrupo(grupoD);
-ordenarGrupo(grupoF);
-ordenarGrupo(grupoG);
-renderizarGrupo(grupoG, "classificacaoG");
-ordenarGrupo(grupoH);
-renderizarGrupo(grupoH, "classificacaoH");
-renderizarGrupo(grupoF, "classificacaoF");
-console.log("Grupo A:", grupoA);
-
-renderizarGrupo(grupoA, "classificacaoA");
-renderizarGrupo(grupoB, "classificacaoB");
-renderizarGrupo(grupoC, "classificacaoC");
-renderizarGrupo(grupoD, "classificacaoD");
-
- salvarDados();
-});
-
-function salvarDados() {
-
-    const dados = {
-
-        mexico: document.getElementById("mexico").value,
-        africadosul: document.getElementById("africadosul").value,
-
-        coreiadosul: document.getElementById("coreiadosul").value,
-        republicatcheca: document.getElementById("republicatcheca").value,
-
-        japaoCamaroes: document.getElementById("japaoCamaroes").value,
-        camaroesJapao: document.getElementById("camaroesJapao").value,
-
-        brasilCamaroes: document.getElementById("brasilCamaroes").value,
-        camaroesBrasil: document.getElementById("camaroesBrasil").value,
-
-        mexicoJapao: document.getElementById("mexicoJapao").value,
-        japaoMexico: document.getElementById("japaoMexico").value
-
-    };
-
-    localStorage.setItem(
-        "grupoA",
-        JSON.stringify(dados)
-    );
-
+// ==========================================
+// PARTE 2: CÁLCULOS DOS GRUPOS A, B, C E D
+// ==========================================
+
+function calcularGruposABCD() {
+    // --- GRUPO A ---
+    // Encontrar objetos dos times no array correspondente
+    const mexA = grupoA.find(t => t.nome.includes("México"));
+    const afrA = grupoA.find(t => t.nome.includes("África do Sul"));
+    const corA = grupoA.find(t => t.nome.includes("Coreia do Sul"));
+    const tchA = grupoA.find(t => t.nome.includes("República Tcheca"));
+
+    // Rodada 1
+    processarJogo(mexA, "mexico_r1", afrA, "africadosul_r1");
+    processarJogo(corA, "coreiasul_r1", tchA, "tchequia_r1");
+    // Rodada 2
+    processarJogo(tchA, "tchequia_r2", afrA, "africadosul_r2");
+    processarJogo(mexA, "mexico_r2", corA, "coreiasul_r2");
+    // Rodada 3
+    processarJogo(tchA, "tchequia_r3", mexA, "mexico_r3");
+    processarJogo(afrA, "africadosul_r3", corA, "coreiasul_r3");
+
+    // --- GRUPO B ---
+    const canB = grupoB.find(t => t.nome.includes("Canadá"));
+    const bosB = grupoB.find(t => t.nome.includes("Bósnia"));
+    const catB = grupoB.find(t => t.nome.includes("Catar"));
+    const suiB = grupoB.find(t => t.nome.includes("Suíça"));
+
+    // Rodada 1
+    processarJogo(canB, "canada_r1", bosB, "bosnia_r1");
+    processarJogo(catB, "catar_r1", suiB, "suica_r1");
+    // Rodada 2
+    processarJogo(canB, "canada_r2", catB, "catar_r2");
+    processarJogo(suiB, "suica_r2", bosB, "bosnia_r2");
+    // Rodada 3
+    processarJogo(suiB, "suica_r3", canB, "canada_r3");
+    processarJogo(bosB, "bosnia_r3", catB, "catar_r3");
+
+    // --- GRUPO C ---
+    const braC = grupoC.find(t => t.nome.includes("Brasil"));
+    const marC = grupoC.find(t => t.nome.includes("Marrocos"));
+    const haiC = grupoC.find(t => t.nome.includes("Haiti"));
+    const escC = grupoC.find(t => t.nome.includes("Escócia"));
+
+    // Rodada 1
+    processarJogo(braC, "brasil_r1", marC, "marrocos_r1");
+    processarJogo(haiC, "haiti_r1", escC, "escocia_r1");
+    // Rodada 2
+    processarJogo(escC, "escocia_r2", marC, "marrocos_r2");
+    processarJogo(braC, "brasil_r2", haiC, "haiti_r2");
+    // Rodada 3
+    processarJogo(escC, "escocia_r3", braC, "brasil_r3");
+    processarJogo(marC, "marrocos_r3", haiC, "haiti_r3");
+
+    // --- GRUPO D ---
+    const euaD = grupoD.find(t => t.nome.includes("Estados Unidos"));
+    const parD = grupoD.find(t => t.nome.includes("Paraguai"));
+    const ausD = grupoD.find(t => t.nome.includes("Austrália"));
+    const turD = grupoD.find(t => t.nome.includes("Turquia"));
+
+    // Rodada 1
+    processarJogo(euaD, "eua_r1", parD, "paraguai_r1");
+    processarJogo(ausD, "australia_r1", turD, "turquia_r1");
+    // Rodada 2
+    processarJogo(euaD, "eua_r2", ausD, "australia_r2");
+    processarJogo(turD, "turquia_r2", parD, "paraguai_r2");
+    // Rodada 3
+    processarJogo(turD, "turquia_r3", euaD, "eua_r3");
+    processarJogo(parD, "paraguai_r3", ausD, "australia_r3");
 }
-document
-    .getElementById("limpar")
-    .addEventListener("click", () => {
+// ==========================================
+// PARTE 3: CÁLCULOS DOS GRUPOS E, F, G E H
+// ==========================================
 
-        if(confirm("Deseja apagar toda a simulação?")){
+function calcularGruposEFGH() {
+    // --- GRUPO E ---
+    const aleE = grupoE.find(t => t.nome.includes("Alemanha"));
+    const curE = grupoE.find(t => t.nome.includes("Curaçao"));
+    const marE = grupoE.find(t => t.nome.includes("Costa do Marfim"));
+    const equE = grupoE.find(t => t.nome.includes("Equador"));
 
-            localStorage.removeItem("grupoA");
+    // Rodada 1
+    processarJogo(aleE, "alemanha_r1", curE, "curacao_r1");
+    processarJogo(marE, "costamarfim_r1", equE, "equador_r1");
+    // Rodada 2
+    processarJogo(aleE, "alemanha_r2", marE, "costamarfim_r2");
+    processarJogo(equE, "equador_r2", curE, "curacao_r2");
+    // Rodada 3
+    processarJogo(equE, "equador_r3", aleE, "alemanha_r3");
+    processarJogo(curE, "curacao_r3", marE, "costamarfim_r3");
 
-            location.reload();
+    // --- GRUPO F ---
+    const holF = grupoF.find(t => t.nome.includes("Holanda"));
+    const iraqF = grupoF.find(t => t.nome.includes("Iraque"));
+    const algF = grupoF.find(t => t.nome.includes("Argélia"));
+    const perF = grupoF.find(t => t.nome.includes("Peru"));
 
-        }
+    // Rodada 1
+    processarJogo(holF, "holanda_r1", iraqF, "iraque_r1");
+    processarJogo(algF, "argelia_r1", perF, "peru_r1");
+    // Rodada 2
+    processarJogo(holF, "holanda_r2", algF, "argelia_r2");
+    processarJogo(perF, "peru_r2", iraqF, "iraque_r2");
+    // Rodada 3
+    processarJogo(perF, "peru_r3", holF, "holanda_r3");
+    processarJogo(iraqF, "iraque_r3", algF, "argelia_r3");
 
-    });
-    function renderizarGrupo(grupo, tabelaId) {
+    // --- GRUPO G ---
+    const belG = grupoG.find(t => t.nome.includes("Bélgica"));
+    const egiG = grupoG.find(t => t.nome.includes("Egito"));
+    const iraG = grupoG.find(t => t.nome.includes("Irã"));
+    const nzeG = grupoG.find(t => t.nome.includes("Nova Zelândia"));
 
-        const tabela =
-            document.getElementById(tabelaId);
+    // Rodada 1
+    processarJogo(belG, "belgica_r1", egiG, "egito_r1");
+    processarJogo(iraG, "ira_r1", nzeG, "novazelandia_r1");
+    // Rodada 2
+    processarJogo(belG, "belgica_r2", iraG, "ira_r2");
+    processarJogo(nzeG, "novazelandia_r2", egiG, "egito_r2");
+    // Rodada 3
+    processarJogo(egiG, "egito_r3", iraG, "ira_r3");
+    processarJogo(nzeG, "novazelandia_r3", belG, "belgica_r3");
+
+    // --- GRUPO H ---
+    const espH = grupoH.find(t => t.nome.includes("Espanha"));
+    const cabH = grupoH.find(t => t.nome.includes("Cabo Verde"));
+    const araH = grupoH.find(t => t.nome.includes("Arábia Saudita"));
+    const uruH = grupoH.find(t => t.nome.includes("Uruguai"));
+
+    // Rodada 1
+    processarJogo(espH, "espanha_r1", cabH, "caboverde_r1");
+    processarJogo(araH, "arabiasaudita_r1", uruH, "uruguai_r1");
+    // Rodada 2
+    processarJogo(espH, "espanha_r2", araH, "arabiasaudita_r2");
+    processarJogo(uruH, "uruguai_r2", cabH, "caboverde_r2");
+    // Rodada 3
+    processarJogo(cabH, "caboverde_r3", araH, "arabiasaudita_r3");
+    processarJogo(uruH, "uruguai_r3", espH, "espanha_r3");
+}
+// ==========================================
+// PARTE 4: CÁLCULOS DOS GRUPOS I, J, K E L
+// ==========================================
+function calcularGruposIJKL() {
+
+// --- GRUPO I ---
+const fraI = grupoI.find(t => t.nome.includes("França"));
+const senI = grupoI.find(t => t.nome.includes("Senegal"));
+const iraI = grupoI.find(t => t.nome.includes("Iraque"));
+const norI = grupoI.find(t => t.nome.includes("Noruega"));
+
+// Rodada 1
+processarJogo(fraI, "franca_r1", senI, "senegal_r1");
+processarJogo(iraI, "iraque_i_r1", norI, "noruega_r1");
+
+// Rodada 2
+processarJogo(fraI, "franca_r2", iraI, "iraque_i_r2");
+processarJogo(norI, "noruega_r2", senI, "senegal_r2");
+
+// Rodada 3
+processarJogo(norI, "noruega_r3", fraI, "franca_r3");
+processarJogo(senI, "senegal_r3", iraI, "iraque_i_r3");
+
+    // --- GRUPO J ---
+const argJ = grupoJ.find(t => t.nome.includes("Argentina"));
+const ausJ = grupoJ.find(t => t.nome.includes("Áustria"));
+const algJ = grupoJ.find(t => t.nome.includes("Argélia"));
+const jorJ = grupoJ.find(t => t.nome.includes("Jordânia"));
+
+   
+    // Rodada 1
+processarJogo(argJ, "argentina_r1", ausJ, "austria_r1");
+processarJogo(algJ, "argelia_j_r1", jorJ, "jordania_r1");
+
+// Rodada 2
+processarJogo(argJ, "argentina_r2", algJ, "argelia_j_r2");
+processarJogo(jorJ, "jordania_r2", ausJ, "austria_r2");
+
+// Rodada 3
+processarJogo(jorJ, "jordania_r3", argJ, "argentina_r3");
+processarJogo(ausJ, "austria_r3", algJ, "argelia_j_r3");
+
+    // --- GRUPO K ---
+    const porK = grupoK.find(t => t.nome.includes("Portugal"));
+    const rdcK = grupoK.find(t => t.nome.includes("RD Congo"));
+    const uzbK = grupoK.find(t => t.nome.includes("Uzbequistão"));
+    const colK = grupoK.find(t => t.nome.includes("Colômbia"));
+
+    // Rodada 1
+    processarJogo(porK, "portugal_r1", rdcK, "rdcongo_r1");
+    processarJogo(uzbK, "uzbequistao_r1", colK, "colombia_r1");
+    // Rodada 2
+    processarJogo(porK, "portugal_r2", uzbK, "uzbequistao_r2");
+    processarJogo(colK, "colombia_r2", rdcK, "rdcongo_r2");
+    // Rodada 3
+    processarJogo(colK, "colombia_r3", porK, "portugal_r3");
+    processarJogo(rdcK, "rdcongo_r3", uzbK, "uzbequistao_r3");
+
+    // --- GRUPO L ---
+    const ingL = grupoL.find(t => t.nome.includes("Inglaterra"));
+    const croL = grupoL.find(t => t.nome.includes("Croácia"));
+    const ganL = grupoL.find(t => t.nome.includes("Gana"));
+    const panL = grupoL.find(t => t.nome.includes("Panamá"));
+
+    // Rodada 1
+    processarJogo(ingL, "inglaterra_l_r1", croL, "croacia_r1");
+    processarJogo(ganL, "gana_r1", panL, "panama_r1");
+    // Rodada 2
+    processarJogo(ingL, "inglaterra_l_r2", ganL, "gana_r2");
+    processarJogo(panL, "panama_r2", croL, "croacia_r2");
+    // Rodada 3
+    processarJogo(croL, "croacia_r3", ganL, "gana_r3");
+    processarJogo(panL, "panama_r3", ingL, "inglaterra_l_r3");
+}
+// ==========================================
+// PARTE 5: EXIBIÇÃO VISUAL E EVENTOS
+// ==========================================
+
+function exibirTabelasNaTela() {
+    // Procura por um container de classificação ou cria um logo após a section dos jogos
+    let containerClassificacao = document.getElementById("container-classificacao");
     
-        tabela.innerHTML = "";
+    if (!containerClassificacao) {
+        containerClassificacao = document.createElement("section");
+        containerClassificacao.id = "container-classificacao";
+        containerClassificacao.className = "tabelas-classificacao";
+        document.querySelector("main").appendChild(containerClassificacao);
+    }
     
-        grupo.forEach((time, index) => {
-    
-            let classe = "";
-    
-            if (index === 0) {
-                classe = "lider";
-            }
-            else if (index < 2) {
-                classe = "classificado";
-            }
-    
-            tabela.innerHTML += `
-                <tr class="${classe}">
-                    <td>${index + 1}</td>
-                    <td>${time.nome}</td>
-                    <td>${time.pontos}</td>
+    // Limpa tabelas anteriores para não duplicar dados na tela
+    containerClassificacao.innerHTML = "<h2>📊 Classificação Atualizada</h2>";
+
+    // Passa de grupo em grupo (A até L), ordena os times e monta o HTML da tabela
+    Object.keys(grupos).forEach(letra => {
+        const grupoAtual = grupos[letra];
+        ordenarGrupo(grupoAtual);
+
+        let tabelaHTML = `
+            <div class="bloco-tabela-grupo">
+                <h3>Grupo ${letra}</h3>
+                <table class="tabela-grupo">
+                    <thead>
+                        <tr>
+                            <th>Seleção</th>
+                            <th>P</th>
+                            <th>J</th>
+                            <th>V</th>
+                            <th>E</th>
+                            <th>D</th>
+                            <th>GP</th>
+                            <th>GC</th>
+                            <th>SG</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `;
+
+        grupoAtual.forEach(time => {
+            tabelaHTML += `
+                <tr>
+                    <td class="nome-time">${time.nome}</td>
+                    <td><strong>${time.pontos}</strong></td>
                     <td>${time.jogos}</td>
                     <td>${time.vitorias}</td>
                     <td>${time.empates}</td>
                     <td>${time.derrotas}</td>
                     <td>${time.golsPro}</td>
                     <td>${time.golsContra}</td>
-                    <td>${time.saldo}</td>
+                    <td class="${time.saldo > 0 ? 'saldo-positivo' : time.saldo < 0 ? 'saldo-negativo' : ''}">${time.saldo}</td>
                 </tr>
             `;
-    
         });
-    
-    }
-carregarDados();
-    renderizarGrupo(grupoA, "classificacaoA");
-       
-    document
-        .getElementById("simular")
-        .click();
-    
-        for (const letra in grupos) {
 
-            renderizarGrupo(
-                grupos[letra],
-                "classificacao" + letra
-            );
-        
-        }
-    
-    function renderizarGrupoB() {
-        renderizarGrupo(grupoB, "classificacaoB");
+        tabelaHTML += `
+                    </tbody>
+                </table>
+            </div>
+        `;
+
+        containerClassificacao.innerHTML += tabelaHTML;
+    });
+}
+
+// --- EVENT LISTENER: BOTÃO SIMULAR ---
+document.getElementById("simular").addEventListener("click", () => {
+    // 1. Zera a pontuação antiga da memória antes de recalcular
+    zerarTodosOsGrupos();
+
+    // 2. Executa o cálculo de todos os 12 grupos com base nos inputs
+    calcularGruposABCD();
+    calcularGruposEFGH();
+    calcularGruposIJKL();
+
+    // 3. Imprime as tabelas prontas e ordenadas no final da página
+    exibirTabelasNaTela();
+
+    // 4. Dá um scroll suave para a área de classificação atualizada
+    document.getElementById("container-classificacao").scrollIntoView({ behavior: 'smooth' });
+});
+
+// --- EVENT LISTENER: BOTÃO LIMPAR ---
+document.getElementById("limpar").addEventListener("click", () => {
+    // Limpa todos os campos numéricos de inputs de jogos no HTML
+    const inputsPlacar = document.querySelectorAll('.partida input[type="number"]');
+    inputsPlacar.forEach(input => input.value = "");
+
+    // Reseta o estado dos objetos de dados na memória do JavaScript
+    zerarTodosOsGrupos();
+
+    // Remove a tabela visual gerada anteriormente se ela existir na tela
+    const containerClassificacao = document.getElementById("container-classificacao");
+    if (containerClassificacao) {
+        containerClassificacao.innerHTML = "";
     }
+});
