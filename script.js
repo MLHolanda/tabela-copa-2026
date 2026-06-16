@@ -421,6 +421,35 @@ function exibirTabelasNaTela() {
         containerClassificacao.innerHTML += tabelaHTML;
     });
 }
+// ==========================================
+// SALVAMENTO AUTOMÁTICO
+// ==========================================
+
+function salvarDados() {
+    const dados = {};
+
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        dados[input.id] = input.value;
+    });
+
+    localStorage.setItem("copa2026", JSON.stringify(dados));
+}
+
+function carregarDados() {
+    const dadosSalvos = localStorage.getItem("copa2026");
+
+    if (!dadosSalvos) return;
+
+    const dados = JSON.parse(dadosSalvos);
+
+    Object.keys(dados).forEach(id => {
+        const campo = document.getElementById(id);
+
+        if (campo) {
+            campo.value = dados[id];
+        }
+    });
+}
 
 // --- EVENT LISTENER: BOTÃO SIMULAR ---
 document.getElementById("simular").addEventListener("click", () => {
@@ -441,6 +470,8 @@ document.getElementById("simular").addEventListener("click", () => {
 
 // --- EVENT LISTENER: BOTÃO LIMPAR ---
 document.getElementById("limpar").addEventListener("click", () => {
+	
+	localStorage.removeItem("copa2026");
     // Limpa todos os campos numéricos de inputs de jogos no HTML
     const inputsPlacar = document.querySelectorAll('.partida input[type="number"]');
     inputsPlacar.forEach(input => input.value = "");
@@ -453,4 +484,20 @@ document.getElementById("limpar").addEventListener("click", () => {
     if (containerClassificacao) {
         containerClassificacao.innerHTML = "";
     }
+});
+
+// ==========================================
+// SALVA AUTOMATICAMENTE AO DIGITAR
+// ==========================================
+
+document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.addEventListener('input', salvarDados);
+});
+
+// ==========================================
+// CARREGA DADOS AO ABRIR
+// ==========================================
+
+window.addEventListener('load', () => {
+    carregarDados();
 });
