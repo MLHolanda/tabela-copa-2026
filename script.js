@@ -486,13 +486,32 @@ document.getElementById("limpar").addEventListener("click", () => {
     }
 });
 
+
 // ==========================================
 // SALVA AUTOMATICAMENTE AO DIGITAR
 // ==========================================
 
 document.querySelectorAll('input[type="number"]').forEach(input => {
-    input.addEventListener('input', salvarDados);
+    input.addEventListener('input', () => {
+
+        salvarDados();
+
+        zerarTodosOsGrupos();
+
+        calcularGruposABCD();
+        calcularGruposEFGH();
+        calcularGruposIJKL();
+
+        exibirTabelasNaTela();
+
+    });
 });
+
+
+// ==========================================
+// CARREGA DADOS AO ABRIR
+// ==========================================
+
 
 // ==========================================
 // CARREGA DADOS AO ABRIR
@@ -501,3 +520,4 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
 window.addEventListener('load', () => {
     carregarDados();
 });
+
