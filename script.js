@@ -518,6 +518,15 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
 // ==========================================
 
 window.addEventListener('load', () => {
-    carregarDados();
-});
 
+    carregarDados();
+
+    zerarTodosOsGrupos();
+
+    calcularGruposABCD();
+    calcularGruposEFGH();
+    calcularGruposIJKL();
+
+    exibirTabelasNaTela();
+
+});
