@@ -38,10 +38,10 @@ const grupoE = [
 ];
 
 const grupoF = [
-    { nome: "🇳🇱 Holanda", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇮🇶 Iraque", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇩🇿 Argélia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
-    { nome: "🇵🇪 Peru", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
+     { nome: "🇳🇱 Holanda", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+     { nome: "🇯🇵 Japão", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+     { nome: "🇸🇪 Suécia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
+     { nome: "🇹🇳 Tunísia", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 }
 ];
 
 const grupoG = [
@@ -231,21 +231,24 @@ function calcularGruposEFGH() {
     processarJogo(equE, "equador_r3", aleE, "alemanha_r3");
     processarJogo(curE, "curacao_r3", marE, "costamarfim_r3");
 
-    // --- GRUPO F ---
+
+     // --- GRUPO F ---
     const holF = grupoF.find(t => t.nome.includes("Holanda"));
-    const iraqF = grupoF.find(t => t.nome.includes("Iraque"));
-    const algF = grupoF.find(t => t.nome.includes("Argélia"));
-    const perF = grupoF.find(t => t.nome.includes("Peru"));
+    const japF = grupoF.find(t => t.nome.includes("Japão"));
+    const sueF = grupoF.find(t => t.nome.includes("Suécia"));
+    const tunF = grupoF.find(t => t.nome.includes("Tunísia"));
 
     // Rodada 1
-    processarJogo(holF, "holanda_r1", iraqF, "iraque_r1");
-    processarJogo(algF, "argelia_r1", perF, "peru_r1");
+    processarJogo(holF, "holanda_r1", japF, "iraque_r1");
+    processarJogo(sueF, "argelia_r1", tunF, "peru_r1");
+
     // Rodada 2
-    processarJogo(holF, "holanda_r2", algF, "argelia_r2");
-    processarJogo(perF, "peru_r2", iraqF, "iraque_r2");
+    processarJogo(holF, "holanda_r2", sueF, "argelia_r2");
+    processarJogo(tunF, "peru_r2", japF, "iraque_r2");
+
     // Rodada 3
-    processarJogo(perF, "peru_r3", holF, "holanda_r3");
-    processarJogo(iraqF, "iraque_r3", algF, "argelia_r3");
+    processarJogo(tunF, "peru_r3", holF, "holanda_r3");
+    processarJogo(japF, "iraque_r3", sueF, "argelia_r3");
 
     // --- GRUPO G ---
     const belG = grupoG.find(t => t.nome.includes("Bélgica"));
