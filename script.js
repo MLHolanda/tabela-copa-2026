@@ -1,4 +1,4 @@
-// ==========================================
+/// ==========================================
 // PARTE 1: DECLARAÇÃO DOS GRUPOS E SELEÇÕES
 // ==========================================
 
@@ -466,6 +466,7 @@ document.getElementById("simular").addEventListener("click", () => {
 
     // 3. Imprime as tabelas prontas e ordenadas no final da página
     exibirTabelasNaTela();
+    exibirClassificados();
 
     // 4. Dá um scroll suave para a área de classificação atualizada
     document.getElementById("container-classificacao").scrollIntoView({ behavior: 'smooth' });
@@ -506,6 +507,7 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
         calcularGruposIJKL();
 
         exibirTabelasNaTela();
+        exibirClassificados();
 
     });
 });
@@ -531,5 +533,21 @@ window.addEventListener('load', () => {
     calcularGruposIJKL();
 
     exibirTabelasNaTela();
+    exibirClassificados();
 
 });
+// ==========================================
+// CLASSIFICADOS (EM CONSTRUÇÃO)
+// ==========================================
+
+function exibirClassificados() {
+
+    const container = document.getElementById("container-classificados");
+
+    if (!container) return;
+
+    container.innerHTML = `
+        <h3>🏆 Área de classificados em construção</h3>
+        <p>Em breve os 32 classificados aparecerão aqui.</p>
+    `;
+}
