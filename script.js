@@ -546,8 +546,157 @@ function exibirClassificados() {
 
     if (!container) return;
 
-    container.innerHTML = `
-        <h3>🏆 Área de classificados em construção</h3>
-        <p>Em breve os 32 classificados aparecerão aqui.</p>
+    let html = `<h2>🏆 Classificados para o Mata-Mata</h2>`;
+
+    Object.keys(grupos).forEach(letra => {
+
+        const grupo = [...grupos[letra]];
+
+        ordenarGrupo(grupo);
+
+        html += `
+            <div class="bloco-tabela-grupo">
+                <h3>Grupo ${letra}</h3>
+
+                <p>🥇 ${grupo[0].nome}</p>
+                <p>🥈 ${grupo[1].nome}</p>
+                <p>🥉 ${grupo[2].nome}</p>
+
+            </div>
+        `;
+    });
+
+    const terceiros = [];
+
+Object.keys(grupos).forEach(letra => {
+
+    const grupo = [...grupos[letra]];
+
+    ordenarGrupo(grupo);
+
+    terceiros.push({
+        grupo: letra,
+        ...grupo[2]
+    });
+
+});
+
+terceiros.sort((a, b) => {
+
+    if (b.pontos !== a.pontos) return b.pontos - a.pontos;
+    if (b.saldo !== a.saldo) return b.saldo - a.saldo;
+    return b.golsPro - a.golsPro;
+
+});
+
+html += `<div class="bloco-tabela-grupo">`;
+html += `<h3>🏅 Ranking dos Terceiros</h3>`;
+
+terceiros.forEach((time, index) => {
+
+    const status = index < 8
+        ? "✅ Classificado"
+        : "❌ Eliminado";
+
+    html += `
+        <p>
+            ${index + 1}º - ${time.nome}
+            (${time.pontos} pts | SG ${time.saldo})
+            <strong>${status}</strong>
+        </p>
     `;
+
+});
+
+html += `</div>`;
+
+const classificados = [];
+
+// 1º e 2º colocados de cada grupo
+Object.keys(grupos).forEach(letra => {
+
+    const grupo = [...grupos[letra]];
+
+    ordenarGrupo(grupo);
+
+    classificados.push({
+        codigo: `${letra}1`,
+        ...grupo[0]
+    });
+    
+    classificados.push({
+        codigo: `${letra}2`,
+        ...grupo[1]
+    });
+
+});
+
+// 8 melhores terceiros
+terceiros.slice(0, 8).forEach((time, index) => {
+
+    classificados.push({
+        codigo: `T${index + 1}`,
+        ...time
+    });
+
+});
+
+html += `<div class="bloco-tabela-grupo">`;
+html += `<h3>🏆 32 Classificados</h3>`;
+
+classificados.forEach((time) => {
+
+    html += `
+        <p>
+            <strong>${time.codigo}</strong> - ${time.nome}
+        </p>
+    `;
+
+});
+
+html += `</div>`;
+
+
+
+const buscarTime = (codigo) =>
+    classificados.find(time => time.codigo === codigo);
+
+
+
+html += `
+    <div class="bloco-tabela-grupo">
+        <h3>🏆 16-avos de Final</h3>
+
+        <p>
+    ${buscarTime("A1").nome}
+    ×
+    ${buscarTime("T8").nome}
+</p>
+        <p>B1 × T7</p>
+        <p>C1 × T6</p>
+        <p>D1 × T5</p>
+        <p>E1 × T4</p>
+        <p>F1 × T3</p>
+        <p>G1 × T2</p>
+        <p>H1 × T1</p>
+
+        <hr>
+
+        <p>I1 × L2</p>
+        <p>J1 × K2</p>
+        <p>K1 × J2</p>
+        <p>L1 × I2</p>
+
+        <hr>
+
+        <p>A2 × H2</p>
+        <p>B2 × G2</p>
+        <p>C2 × F2</p>
+        <p>D2 × E2</p>
+
+    </div>
+`;
+
+    container.innerHTML = html;
 }
+
