@@ -467,7 +467,7 @@ document.getElementById("simular").addEventListener("click", () => {
     // 3. Imprime as tabelas prontas e ordenadas no final da página
     exibirTabelasNaTela();
     exibirClassificados();
-
+    calcular16Avos();
     salvarDados();
 
     // 4. Dá um scroll suave para a área de classificação atualizada
@@ -555,6 +555,29 @@ window.addEventListener('load', () => {
     exibirClassificados();
 
 });
+
+// ==========================================
+// CALCULA VENCEDOR DE UM CONFRONTO
+// ==========================================
+
+function vencedor(gols1, gols2, time1, time2) {
+
+    if (gols1 > gols2) return time1;
+
+    if (gols2 > gols1) return time2;
+
+    return null;
+
+}
+function calcular16Avos() {
+
+    const golsA = Number(document.getElementById("mata_a1").value);
+    const golsB = Number(document.getElementById("mata_a2").value);
+
+    console.log(golsA);
+    console.log(golsB);
+
+}
 
 // ==========================================
 // GERAÇÃO DO MATA-MATA
