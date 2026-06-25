@@ -468,26 +468,45 @@ document.getElementById("simular").addEventListener("click", () => {
     exibirTabelasNaTela();
     exibirClassificados();
 
+    salvarDados();
+
     // 4. Dá um scroll suave para a área de classificação atualizada
     document.getElementById("container-classificacao").scrollIntoView({ behavior: 'smooth' });
 });
 
 // --- EVENT LISTENER: BOTÃO LIMPAR ---
 document.getElementById("limpar").addEventListener("click", () => {
-	
-	localStorage.removeItem("copa2026");
-    // Limpa todos os campos numéricos de inputs de jogos no HTML
+
+    const confirmar = confirm(
+        "Tem certeza que deseja iniciar uma nova simulação?\n\nTodos os placares serão apagados."
+    );
+
+    if (!confirmar) {
+        return;
+    }
+
+    // Limpa o localStorage
+    localStorage.removeItem("copa2026");
+
+    // Limpa todos os placares
     const inputsPlacar = document.querySelectorAll('.partida input[type="number"]');
     inputsPlacar.forEach(input => input.value = "");
 
-    // Reseta o estado dos objetos de dados na memória do JavaScript
+    // Zera os dados em memória
     zerarTodosOsGrupos();
 
-    // Remove a tabela visual gerada anteriormente se ela existir na tela
+    // Limpa a classificação
     const containerClassificacao = document.getElementById("container-classificacao");
     if (containerClassificacao) {
         containerClassificacao.innerHTML = "";
     }
+
+    // Limpa os classificados e mata-mata
+    const containerClassificados = document.getElementById("container-classificados");
+    if (containerClassificados) {
+        containerClassificados.innerHTML = "";
+    }
+
 });
 
 
@@ -496,7 +515,7 @@ document.getElementById("limpar").addEventListener("click", () => {
 // ==========================================
 
 document.querySelectorAll('input[type="number"]').forEach(input => {
-    input.addEventListener('input', () => {
+   /* input.addEventListener('input', () => {
 
         salvarDados();
 
@@ -509,7 +528,7 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
         exibirTabelasNaTela();
         exibirClassificados();
 
-    });
+    });*/
 });
 
 
@@ -672,31 +691,95 @@ html += `
     ×
     ${buscarTime("T8").nome}
 </p>
-        <p>B1 × T7</p>
-        <p>C1 × T6</p>
-        <p>D1 × T5</p>
-        <p>E1 × T4</p>
-        <p>F1 × T3</p>
-        <p>G1 × T2</p>
-        <p>H1 × T1</p>
+       
+        <p>
+    ${buscarTime("B1").nome}
+    ×
+    ${buscarTime("T7").nome}
+</p>
+
+         <p>
+    ${buscarTime("C1").nome}
+    ×
+    ${buscarTime("T6").nome}
+</p>
+
+         <p>
+    ${buscarTime("D1").nome}
+    ×
+    ${buscarTime("T5").nome}
+</p>
+        <p>
+    ${buscarTime("E1").nome}
+    ×
+    ${buscarTime("T4").nome}
+</p>
+        <p>
+    ${buscarTime("F1").nome}
+    ×
+    ${buscarTime("T3").nome}
+</p>
+        <p>
+    ${buscarTime("G1").nome}
+    ×
+    ${buscarTime("T2").nome}
+</p>
+        <p>
+    ${buscarTime("H1").nome}
+    ×
+    ${buscarTime("T1").nome}
+</p>
+   
+
+        <hr>
+         <p>
+    ${buscarTime("I1").nome}
+    ×
+    ${buscarTime("L2").nome}
+</p>
+        <p>
+    ${buscarTime("J1").nome}
+    ×
+    ${buscarTime("K2").nome}
+</p>
+        <p>
+    ${buscarTime("K1").nome}
+    ×
+    ${buscarTime("J2").nome}
+</p>
+        <p>
+    ${buscarTime("L1").nome}
+    ×
+    ${buscarTime("I2").nome}
+</p>
+       
 
         <hr>
 
-        <p>I1 × L2</p>
-        <p>J1 × K2</p>
-        <p>K1 × J2</p>
-        <p>L1 × I2</p>
-
-        <hr>
-
-        <p>A2 × H2</p>
-        <p>B2 × G2</p>
-        <p>C2 × F2</p>
-        <p>D2 × E2</p>
+         <p>
+    ${buscarTime("A2").nome}
+    ×
+    ${buscarTime("H2").nome}
+</p>
+        <p>
+    ${buscarTime("B2").nome}
+    ×
+    ${buscarTime("G2").nome}
+</p>
+        <p>
+    ${buscarTime("C2").nome}
+    ×
+    ${buscarTime("F2").nome}
+</p>
+        <p>
+    ${buscarTime("D2").nome}
+    ×
+    ${buscarTime("E2").nome}
+</p>
+        
 
     </div>
 `;
 
     container.innerHTML = html;
 }
-
