@@ -735,8 +735,222 @@ classificados.forEach((time) => {
 
 html += `</div>`;
 
-html += gerar16Avos(classificados);
 
-container.innerHTML = html;
 
+const buscarTime = (codigo) =>
+    classificados.find(time => time.codigo === codigo);
+
+
+
+html += `
+    <div class="bloco-tabela-grupo">
+        <h3>🏆 16-avos de Final</h3>
+
+        <div class="partida">
+    <span>${buscarTime("A1").nome}</span>
+
+    <input
+        type="number"
+        id="mata_a1"
+        min="0"
+    >
+
+    <span>x</span>
+
+    <input
+        type="number"
+        id="mata_a2"
+        min="0"
+    >
+
+    <span>${buscarTime("T8").nome}</span>
+</div>
+       
+        <div class="partida">
+    <span>${buscarTime("B1").nome}</span>
+
+    <input type="number" id="mata_b1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_b2" min="0">
+
+    <span>${buscarTime("T7").nome}</span>
+</div>
+
+
+
+<div class="partida">
+    <span>${buscarTime("C1").nome}</span>
+
+    <input type="number" id="mata_c1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_c2" min="0">
+
+    <span>${buscarTime("T6").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("D1").nome}</span>
+
+    <input type="number" id="mata_d1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_d2" min="0">
+
+    <span>${buscarTime("T5").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("E1").nome}</span>
+
+    <input type="number" id="mata_e1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_e2" min="0">
+
+    <span>${buscarTime("T4").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("F1").nome}</span>
+
+    <input type="number" id="mata_f1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_f2" min="0">
+
+    <span>${buscarTime("T3").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("G1").nome}</span>
+
+    <input type="number" id="mata_g1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_g2" min="0">
+
+    <span>${buscarTime("T2").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("H1").nome}</span>
+
+    <input type="number" id="mata_h1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_h2" min="0">
+
+    <span>${buscarTime("T1").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("I1").nome}</span>
+
+    <input type="number" id="mata_i1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_i2" min="0">
+
+    <span>${buscarTime("L2").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("J1").nome}</span>
+
+    <input type="number" id="mata_j1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_j2" min="0">
+
+    <span>${buscarTime("K2").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("K1").nome}</span>
+
+    <input type="number" id="mata_k1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_k2" min="0">
+
+    <span>${buscarTime("J2").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("L1").nome}</span>
+
+    <input type="number" id="mata_l1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_l2" min="0">
+
+    <span>${buscarTime("I2").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("A2").nome}</span>
+
+    <input type="number" id="mata_m1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_m2" min="0">
+
+    <span>${buscarTime("H2").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("B2").nome}</span>
+
+    <input type="number" id="mata_n1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_n2" min="0">
+
+    <span>${buscarTime("G2").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("C2").nome}</span>
+
+    <input type="number" id="mata_o1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_o2" min="0">
+
+    <span>${buscarTime("F2").nome}</span>
+</div>
+
+<div class="partida">
+    <span>${buscarTime("D2").nome}</span>
+
+    <input type="number" id="mata_p1" min="0">
+
+    <span>x</span>
+
+    <input type="number" id="mata_p2" min="0">
+
+    <span>${buscarTime("E2").nome}</span>
+</div>
+        
+
+    </div>
+`;
+
+    container.innerHTML = html;
 }
