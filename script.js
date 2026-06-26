@@ -596,6 +596,16 @@ function gerar16Avos(classificados) {
 
     const buscarTime = (codigo) =>
         classificados.find(time => time.codigo === codigo);
+    const chaveFIFA = obterChaveDosTerceiros(
+        classificados.filter(time => time.codigo.startsWith("T"))
+    );
+    
+    const cruzamento = tabelaFIFA.combinacoes[chaveFIFA];
+    console.log(cruzamento);
+    if (cruzamento) {
+        console.log(cruzamento[0]);
+    }
+    //const confrontos = tabelaFIFA.combinacoes[chaveFIFA];
     const confrontos = [
         ["A1", "T8", "mata_a1", "mata_a2"],
         ["B1", "T7", "mata_b1", "mata_b2"],

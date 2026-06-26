@@ -1,13 +1,10 @@
 var tabelaFIFA = {
     combinacoes: {
 
-        TESTE: {
-            A1: "T8"
-        },
-
-        BCDEFGHI: {
-            teste: "OK"
-        }
+        BCDEFGHI: [
+      ["A1", "I3", "mata_a1", "mata_a2"],
+      ["B1", "H3", "mata_b1", "mata_b2"]
+    ]
 
     }
 };
