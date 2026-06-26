@@ -1,7 +1,8 @@
+
 /// ==========================================
 // PARTE 1: DECLARAÇÃO DOS GRUPOS E SELEÇÕES
 // ==========================================
-
+console.log(tabelaFIFA.combinacoes.TESTE);
 const grupoA = [
     { nome: "🇲🇽 México", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
     { nome: "🇿🇦 África do Sul", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
@@ -95,6 +96,15 @@ const grupos = {
 // ==========================================
 // FUNÇÕES DE UTILIDADE E CONTROLE BASE
 // ==========================================
+function obterChaveDosTerceiros(terceiros) {
+
+    return terceiros
+        .slice(0, 8)
+        .map(time => time.grupo)
+        .sort()
+        .join("");
+
+}
 
 function zerarTodosOsGrupos() {
     Object.values(grupos).forEach(grupo => {
@@ -690,6 +700,11 @@ terceiros.sort((a, b) => {
     return b.golsPro - a.golsPro;
 
 });
+const chaveFIFA = obterChaveDosTerceiros(terceiros);
+const cruzamento = tabelaFIFA.combinacoes[chaveFIFA];
+console.log(cruzamento);
+
+console.log(chaveFIFA);
 
 html += `<div class="bloco-tabela-grupo">`;
 html += `<h3>🏅 Ranking dos Terceiros</h3>`;
