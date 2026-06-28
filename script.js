@@ -2,7 +2,7 @@
 /// ==========================================
 // PARTE 1: DECLARAÇÃO DOS GRUPOS E SELEÇÕES
 // ==========================================
-console.log(tabelaFIFA.combinacoes.TESTE);
+//console.log(tabelaFIFA.combinacoes.TESTE);
 const grupoA = [
     { nome: "🇲🇽 México", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
     { nome: "🇿🇦 África do Sul", pontos: 0, jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, saldo: 0 },
@@ -477,7 +477,8 @@ document.getElementById("simular").addEventListener("click", () => {
     // 3. Imprime as tabelas prontas e ordenadas no final da página
     exibirTabelasNaTela();
     exibirClassificados();
-    calcular16Avos();
+    //calcular16Avos();
+    console.log("VERSÃO NOVA DO SCRIPT");
     salvarDados();
 
     // 4. Dá um scroll suave para a área de classificação atualizada
@@ -579,13 +580,72 @@ function vencedor(gols1, gols2, time1, time2) {
     return null;
 
 }
-function calcular16Avos() {
 
-    const golsA = Number(document.getElementById("mata_a1").value);
-    const golsB = Number(document.getElementById("mata_a2").value);
 
-    console.log(golsA);
-    console.log(golsB);
+function calcular16AvosTESTE() {
+
+    console.log("Entrou em calcular16Avos");
+    return;
+
+    const primeiroJogo = document.getElementById("mata_a1");
+    const segundoJogo = document.getElementById("mata_a2");
+
+    if (!primeiroJogo || !segundoJogo) {
+    return;
+}
+
+    const golsA = Number(primeiroJogo.value);
+    const golsB = Number(segundoJogo.value);
+    const classificado = vencedor(golsA, golsB, "A1", "H3");
+
+    console.log("Classificado:", classificado);
+}
+
+// ==========================================
+// MONTA OS CONFRONTOS DOS 16-AVOS
+// ==========================================
+function converterCodigoFIFA(codigo) {
+
+    return codigo.substring(1) + codigo.charAt(0);
+
+}
+
+function montarConfrontos16Avos(chaveFIFA) {
+
+    const cruzamento = window.THIRD_PLACE_TABLE[chaveFIFA];
+
+    if (!cruzamento) {
+        return null;
+    }
+
+    const confrontos = [];
+
+    const pares = Object.entries(cruzamento);
+
+    console.log(converterCodigoFIFA("1A"));
+    console.log(converterCodigoFIFA("3H"));
+
+
+    for (const [indice, [primeiro, terceiro]] of pares.entries()) {
+
+         const letra = String.fromCharCode(97 + indice);
+
+         confrontos.push([
+             converterCodigoFIFA(primeiro),
+             converterCodigoFIFA(terceiro),
+             `mata_${letra}1`,
+             `mata_${letra}2`
+    ]);
+
+}
+
+
+
+    console.log("Pares FIFA:", pares);
+
+    console.log(window.THIRD_PLACE_TABLE["ACDEGHIK"]);
+console.log("Confrontos:", confrontos);
+    return confrontos;
 
 }
 
@@ -596,42 +656,49 @@ function gerar16Avos(classificados) {
 
     const buscarTime = (codigo) =>
         classificados.find(time => time.codigo === codigo);
+
     const chaveFIFA = obterChaveDosTerceiros(
-        classificados.filter(time => time.codigo.startsWith("T"))
+        classificados.filter(time => time.codigo.endsWith("3"))
     );
+
+    // console.log("Chave:", chaveFIFA);
+    const confrontos = montarConfrontos16Avos(chaveFIFA);
+   // const cruzamento = tabelaFIFA.combinacoes[chaveFIFA];
+//    const cruzamento = window.THIRD_PLACE_TABLE[chaveFIFA];
+
+    //console.log("Chave FIFA =", chaveFIFA);
+    //console.log("Chaves existentes =", Object.keys(tabelaFIFA.combinacoes));
     
-    const cruzamento = tabelaFIFA.combinacoes[chaveFIFA];
-    console.log(cruzamento);
-    if (cruzamento) {
-        console.log(cruzamento[0]);
+      if (!confrontos) {
+        console.error("Não existe cruzamento para:", chaveFIFA);
+        return `
+            <div class="bloco-tabela-grupo">
+                <h3>🏆 16-avos de Final</h3>
+                <p>Erro ao gerar os confrontos.</p>
+            </div>
+        `;
     }
-    //const confrontos = tabelaFIFA.combinacoes[chaveFIFA];
-    const confrontos = [
-        ["A1", "T8", "mata_a1", "mata_a2"],
-        ["B1", "T7", "mata_b1", "mata_b2"],
-        ["C1", "T6", "mata_c1", "mata_c2"],
-        ["D1", "T5", "mata_d1", "mata_d2"],
-        ["E1", "T4", "mata_e1", "mata_e2"],
-        ["F1", "T3", "mata_f1", "mata_f2"],
-        ["G1", "T2", "mata_g1", "mata_g2"],
-        ["H1", "T1", "mata_h1", "mata_h2"],
     
-        ["I1", "L2", "mata_i1", "mata_i2"],
-        ["J1", "K2", "mata_j1", "mata_j2"],
-        ["K1", "J2", "mata_k1", "mata_k2"],
-        ["L1", "I2", "mata_l1", "mata_l2"],
+   // const confrontos = cruzamento;
     
-        ["A2", "H2", "mata_m1", "mata_m2"],
-        ["B2", "G2", "mata_n1", "mata_n2"],
-        ["C2", "F2", "mata_o1", "mata_o2"],
-        ["D2", "E2", "mata_p1", "mata_p2"]
-    ]; 
+  //const cruzamento = tabelaFIFA.combinacoes[chaveFIFA];
+     // console.log("Chave:", chaveFIFA);
+    //console.log("Existe?", tabelaFIFA.combinacoes[chaveFIFA]);
+      
+    //console.log(cruzamento);
+    /*if (cruzamento) {
+        console.log(cruzamento[0]);
+    }*/
+
     let html = `
         <div class="bloco-tabela-grupo">
             <h3>🏆 16-avos de Final</h3>
     `;
 
     confrontos.forEach(([time1, time2, id1, id2]) => {
+
+      //  console.log(time1, buscarTime(time1));
+       // console.log(time2, buscarTime(time2));
 
         html += `
             <div class="partida">
@@ -688,6 +755,7 @@ function exibirClassificados() {
         `;
     });
 
+
     const terceiros = [];
 
 Object.keys(grupos).forEach(letra => {
@@ -711,10 +779,16 @@ terceiros.sort((a, b) => {
 
 });
 const chaveFIFA = obterChaveDosTerceiros(terceiros);
+console.log("Chave dos terceiros:", chaveFIFA);
 const cruzamento = tabelaFIFA.combinacoes[chaveFIFA];
+//console.log("Chave:", chaveFIFA);
+//console.log("Cruzamento:", cruzamento);
+/*console.log("Chave:", chaveFIFA);
+console.log("Cruzamento:", cruzamento);
+console.log(cruzamento.length);
 console.log(cruzamento);
-
-console.log(chaveFIFA);
+*/
+//console.log(chaveFIFA);
 
 html += `<div class="bloco-tabela-grupo">`;
 html += `<h3>🏅 Ranking dos Terceiros</h3>`;
@@ -751,18 +825,33 @@ Object.keys(grupos).forEach(letra => {
         ...grupo[0]
     });
     
+    
+  /*console.log(
+        terceiros.slice(0, 8).map(t => ({
+            grupo: t.grupo,
+            nome: t.nome
+        }))
+    );*/
     classificados.push({
         codigo: `${letra}2`,
         ...grupo[1]
     });
 
 });
+/*console.table(
+    terceiros.slice(0, 8).map(t => ({
+        grupo: t.grupo,
+        codigo: t.codigo,
+        nome: t.nome,
+        pontos: t.pontos
+    }))
+);*/
 
 // 8 melhores terceiros
 terceiros.slice(0, 8).forEach((time, index) => {
 
     classificados.push({
-        codigo: `T${index + 1}`,
+        codigo: `${time.grupo}3`,
         ...time
     });
 
@@ -780,6 +869,7 @@ classificados.forEach((time) => {
     `;
 
 });
+//console.table(classificados);
 
 html += `</div>`;
 
@@ -788,3 +878,11 @@ html += gerar16Avos(classificados);
 container.innerHTML = html;
 
 }
+
+console.log("=== TESTE THIRD PLACE ===");
+
+const teste = montarConfrontos16Avos("ACDEGHIK");
+
+console.table(teste);
+
+//console.log(teste);
