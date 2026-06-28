@@ -644,7 +644,7 @@ function montarConfrontos16Avos(chaveFIFA) {
     console.log("Pares FIFA:", pares);
 
     console.log(window.THIRD_PLACE_TABLE["ACDEGHIK"]);
-console.log("Confrontos:", confrontos);
+    console.log("Confrontos:", confrontos);
     return confrontos;
 
 }
@@ -663,6 +663,15 @@ function gerar16Avos(classificados) {
 
     // console.log("Chave:", chaveFIFA);
     const confrontos = montarConfrontos16Avos(chaveFIFA);
+
+    const confrontosFixos = [
+        ["A2", "B2", "mata_i1", "mata_i2"]
+    ];
+
+    const todosConfrontos = [
+          ...confrontos,
+          ...confrontosFixos
+    ];
    // const cruzamento = tabelaFIFA.combinacoes[chaveFIFA];
 //    const cruzamento = window.THIRD_PLACE_TABLE[chaveFIFA];
 
@@ -695,7 +704,7 @@ function gerar16Avos(classificados) {
             <h3>🏆 16-avos de Final</h3>
     `;
 
-    confrontos.forEach(([time1, time2, id1, id2]) => {
+    todosConfrontos.forEach(([time1, time2, id1, id2]) => {
 
       //  console.log(time1, buscarTime(time1));
        // console.log(time2, buscarTime(time2));
@@ -723,7 +732,90 @@ function gerar16Avos(classificados) {
     return html;
 
 }
+// ==========================================
+// NOVO MATA-MATA 2026
+// ==========================================
 
+function gerarMataMata2026(classificados) {
+
+    const jogos = window.CHAVE_16_AVOS;
+    const buscarTime = (codigo) =>
+    classificados.find(time => time.codigo === codigo);
+
+    const chaveFIFA = obterChaveDosTerceiros(
+    classificados.filter(time => time.codigo.endsWith("3"))
+);
+    const cruzamento = window.THIRD_PLACE_TABLE[chaveFIFA];
+    let html = `
+        <div class="bloco-tabela-grupo">
+        <h3>🏆 16-avos de Final</h3>
+    `;
+
+    jogos.forEach(jogo => {
+
+
+       let time1 = jogo.time1;
+       let time2 = jogo.time2 || "???";
+
+ const equipe1 = buscarTime(time1);
+
+          if (equipe1) {
+          time1 = equipe1.nome;
+ }
+
+const equipe2 = buscarTime(time2);
+
+if (equipe2) {
+    time2 = equipe2.nome;
+} 
+
+
+if (jogo.tipo === "terceiro") {
+
+    const codigoTerceiro = cruzamento[jogo.chave];
+
+    console.log(
+        jogo.time1,
+        jogo.chave,
+        codigoTerceiro
+);
+
+    const codigoTime = converterCodigoFIFA(codigoTerceiro);
+
+    const equipe = buscarTime(codigoTime);
+
+    if (equipe) {
+        time2 = equipe.nome;
+    } else {
+        time2 = codigoTime;
+    }
+
+}
+
+
+        html += `
+            <div class="partida">
+                <span>${time1}</span>
+                <span style="margin:0 10px;">x</span>
+                <span>${time2}</span>
+            </div>
+        `;
+
+    });
+
+    html += `</div>`;
+
+    return html;
+
+}
+/*
+function gerarMataMata2026(classificados) {
+    
+    const jogos = window.CHAVE_16_AVOS;
+
+    console.log("NOVO CHAVEAMENTO:", jogos);
+
+}*/
 
 // ==========================================
 // CLASSIFICADOS (EM CONSTRUÇÃO)
@@ -781,14 +873,6 @@ terceiros.sort((a, b) => {
 const chaveFIFA = obterChaveDosTerceiros(terceiros);
 console.log("Chave dos terceiros:", chaveFIFA);
 const cruzamento = tabelaFIFA.combinacoes[chaveFIFA];
-//console.log("Chave:", chaveFIFA);
-//console.log("Cruzamento:", cruzamento);
-/*console.log("Chave:", chaveFIFA);
-console.log("Cruzamento:", cruzamento);
-console.log(cruzamento.length);
-console.log(cruzamento);
-*/
-//console.log(chaveFIFA);
 
 html += `<div class="bloco-tabela-grupo">`;
 html += `<h3>🏅 Ranking dos Terceiros</h3>`;
@@ -873,14 +957,14 @@ classificados.forEach((time) => {
 
 html += `</div>`;
 
-html += gerar16Avos(classificados);
-
+// html += gerar16Avos(classificados);
+html += gerarMataMata2026(classificados);
 container.innerHTML = html;
 
 }
 
 console.log("=== TESTE THIRD PLACE ===");
-
+gerarMataMata2026([]);
 const teste = montarConfrontos16Avos("ACDEGHIK");
 
 console.table(teste);
