@@ -808,7 +808,7 @@ if (jogo.tipo === "terceiro") {
             <input
                type="number"
                min="0"
-               id="j${jogo.jogo}_2">
+               id="j${jogo.jogo}_2"
                onchange="calcular16Avos()">
             <span>${time2}</span>
         </div>
@@ -870,7 +870,7 @@ function calcular16Avos() {
         
         }else {
 
-            console.log("EMPATE:", jogo.jogo);
+            console.warn("EMPATE:", jogo.jogo);
         
             // TEMPORÁRIO
             vencedores16.push(
@@ -909,10 +909,47 @@ function calcular16Avos() {
 
 
 function gerarOitavas(confrontos) {
+    alert("GEROU OITAVAS");
+    console.log("gerarOitavas foi chamada");
+    let html = `
+        <div class="bloco-tabela-grupo">
+            <h3>🏆 Oitavas de Final</h3>
+    `;
 
-    console.table(confrontos);
+    confrontos.forEach((jogo, index) => {
+
+        html += `
+    <div class="partida">
+
+        <span>${jogo[0].nome}</span>
+
+        <input
+            type="number"
+            min="0"
+            id="oit${index}_1">
+            onchange="calcularOitavas()"
+        <span style="margin:0 10px;">x</span>
+
+        <input
+            type="number"
+            min="0"
+            id="oit${index}_2">
+            onchange="calcularOitavas()"
+        <span>${jogo[1].nome}</span>
+
+    </div>
+`;
+
+    });
+
+    html += `</div>`;
+
+console.log(html);
+
+document.getElementById("oitavas").innerHTML = html;
 
 }
+
 /*
 function gerarMataMata2026(classificados) {
     
