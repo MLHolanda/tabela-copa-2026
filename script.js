@@ -1,4 +1,3 @@
-
 /// ==========================================
 // PARTE 1: DECLARAÇÃO DOS GRUPOS E SELEÇÕES
 // ==========================================
@@ -741,7 +740,7 @@ function gerarMataMata2026(classificados) {
     const jogos = window.CHAVE_16_AVOS;
     const buscarTime = (codigo) =>
     classificados.find(time => time.codigo === codigo);
-
+    window.classificadosMataMata = classificados;
     const chaveFIFA = obterChaveDosTerceiros(
     classificados.filter(time => time.codigo.endsWith("3"))
 );
@@ -758,7 +757,7 @@ function gerarMataMata2026(classificados) {
        let time2 = jogo.time2 || "???";
 
  const equipe1 = buscarTime(time1);
-
+ 
           if (equipe1) {
           time1 = equipe1.nome;
  }
@@ -774,14 +773,16 @@ if (jogo.tipo === "terceiro") {
 
     const codigoTerceiro = cruzamento[jogo.chave];
 
-    console.log(
+/*    console.log(
         jogo.time1,
         jogo.chave,
         codigoTerceiro
-);
+);*/
 
     const codigoTime = converterCodigoFIFA(codigoTerceiro);
 
+    jogo.codigoTime2 = codigoTime;
+    
     const equipe = buscarTime(codigoTime);
 
     if (equipe) {
@@ -794,11 +795,23 @@ if (jogo.tipo === "terceiro") {
 
 
         html += `
-            <div class="partida">
-                <span>${time1}</span>
-                <span style="margin:0 10px;">x</span>
-                <span>${time2}</span>
-            </div>
+        <div class="partida">
+            <span>${time1}</span>
+
+            <input
+              type="number"
+              min="0"
+              id="j${jogo.jogo}_1"
+              onchange="calcular16Avos()">
+            <span style="margin:0 10px;">x</span>
+
+            <input
+               type="number"
+               min="0"
+               id="j${jogo.jogo}_2">
+               onchange="calcular16Avos()">
+            <span>${time2}</span>
+        </div>
         `;
 
     });
@@ -806,6 +819,98 @@ if (jogo.tipo === "terceiro") {
     html += `</div>`;
 
     return html;
+
+}
+
+
+function calcular16Avos() {
+
+    console.clear();
+
+    const vencedores16 = [];
+
+    window.CHAVE_16_AVOS.forEach(jogo => {
+
+        const gols1 = document.getElementById(`j${jogo.jogo}_1`).value;
+        const gols2 = document.getElementById(`j${jogo.jogo}_2`).value;
+
+        if (gols1 === "" || gols2 === "")
+            return;
+        
+        const g1 = Number(gols1);
+        const g2 = Number(gols2);
+
+        if (Number.isNaN(g1) || Number.isNaN(g2))
+            return;
+
+        if (g1 > g2) {
+            console.log(
+                jogo.jogo,
+                jogo.time1,
+                jogo.codigoTime2 || jogo.time2,
+                g1,
+                g2
+            );
+
+            vencedores16.push(
+                window.classificadosMataMata.find(
+                    time => time.codigo === jogo.time1
+                )
+            );
+        
+        } else if (g2 > g1) {
+        
+            const codigo = jogo.codigoTime2 || jogo.time2;
+        
+            vencedores16.push(
+                window.classificadosMataMata.find(
+                    time => time.codigo === codigo
+                )
+            );
+        
+        }else {
+
+            console.log("EMPATE:", jogo.jogo);
+        
+            // TEMPORÁRIO
+            vencedores16.push(
+                window.classificadosMataMata.find(
+                    time => time.codigo === jogo.time1
+                )
+            );
+        
+        }
+        
+        });
+
+        console.table(vencedores16);
+
+        if (vencedores16.length < 16)
+            return;
+        
+        const confrontosOitavas = [
+        
+            [vencedores16[0], vencedores16[2]],
+            [vencedores16[1], vencedores16[4]],
+            [vencedores16[3], vencedores16[5]],
+            [vencedores16[6], vencedores16[7]],
+        
+            [vencedores16[10], vencedores16[11]],
+            [vencedores16[8], vencedores16[9]],
+            [vencedores16[13], vencedores16[15]],
+            [vencedores16[12], vencedores16[14]]
+        
+        ];
+        
+        console.table(confrontosOitavas);
+    
+    gerarOitavas(confrontosOitavas);
+}
+
+
+function gerarOitavas(confrontos) {
+
+    console.table(confrontos);
 
 }
 /*
@@ -871,7 +976,7 @@ terceiros.sort((a, b) => {
 
 });
 const chaveFIFA = obterChaveDosTerceiros(terceiros);
-console.log("Chave dos terceiros:", chaveFIFA);
+//console.log("Chave dos terceiros:", chaveFIFA);
 const cruzamento = tabelaFIFA.combinacoes[chaveFIFA];
 
 html += `<div class="bloco-tabela-grupo">`;
@@ -963,10 +1068,10 @@ container.innerHTML = html;
 
 }
 
-console.log("=== TESTE THIRD PLACE ===");
-gerarMataMata2026([]);
-const teste = montarConfrontos16Avos("ACDEGHIK");
+//console.log("=== TESTE THIRD PLACE ===");
+//gerarMataMata2026([]);
+//const teste = montarConfrontos16Avos("ACDEGHIK");
 
-console.table(teste);
+//console.table(teste);
 
 //console.log(teste);
