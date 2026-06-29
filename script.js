@@ -909,12 +909,30 @@ function calcular16Avos() {
 
 
 function gerarOitavas(confrontos) {
-    alert("GEROU OITAVAS");
-    console.log("gerarOitavas foi chamada");
+
     let html = `
         <div class="bloco-tabela-grupo">
             <h3>🏆 Oitavas de Final</h3>
     `;
+
+
+
+    for (let i = 0; i < 8; i++) {
+
+        const input1 = document.getElementById(`oit${i}_1`);
+        const input2 = document.getElementById(`oit${i}_2`);
+    
+        console.log(
+            i,
+            input1,
+            input2
+        );
+    
+    }
+
+
+
+
 
     confrontos.forEach((jogo, index) => {
 
@@ -926,15 +944,15 @@ function gerarOitavas(confrontos) {
         <input
             type="number"
             min="0"
-            id="oit${index}_1">
-            onchange="calcularOitavas()"
+            id="oit${index}_1"
+            onchange="calcularOitavas()">
         <span style="margin:0 10px;">x</span>
 
         <input
             type="number"
             min="0"
-            id="oit${index}_2">
-            onchange="calcularOitavas()"
+            id="oit${index}_2"
+            onchange="calcularOitavas()">
         <span>${jogo[1].nome}</span>
 
     </div>
@@ -944,9 +962,31 @@ function gerarOitavas(confrontos) {
 
     html += `</div>`;
 
-console.log(html);
 
 document.getElementById("oitavas").innerHTML = html;
+
+}
+function calcularOitavas() {
+
+    console.clear();
+
+    const vencedoresOitavas = [];
+
+    for (let i = 0; i < 8; i++) {
+
+        const gols1 = document.getElementById(`oit${i}_1`).value;
+        const gols2 = document.getElementById(`oit${i}_2`).value;
+        if (gols1 === "" || gols2 === "")
+            continue;
+
+        console.log(
+            `Oitava ${i + 1}:`,
+            gols1,
+            "x",
+            gols2
+        );
+
+    }
 
 }
 

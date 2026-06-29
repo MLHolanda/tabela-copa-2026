@@ -95,6 +95,7 @@ hr {
    ========================================== */
 
    .bloco-tabela-grupo {
+    flex: 1 1 280px;
     margin-bottom: 40px;
     overflow-x: auto; /* Permite rolagem lateral em telas pequenas */
     border: 1px solid #eee;
@@ -102,7 +103,14 @@ hr {
     padding: 15px;
     background: #ffffff;
 }
-
+.bloco-tabela-grupo p {
+    margin: 6px 0;
+}
+#container-classificados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 .tabela-grupo {
     width: 100%;
     border-collapse: collapse;
