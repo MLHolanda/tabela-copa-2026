@@ -902,6 +902,8 @@ function calcular16Avos() {
         
         ];
         
+        window.confrontosOitavas = confrontosOitavas;
+
         console.table(confrontosOitavas);
     
     gerarOitavas(confrontosOitavas);
@@ -909,30 +911,11 @@ function calcular16Avos() {
 
 
 function gerarOitavas(confrontos) {
-
+    console.table(confrontos);
     let html = `
         <div class="bloco-tabela-grupo">
             <h3>🏆 Oitavas de Final</h3>
     `;
-
-
-
-    for (let i = 0; i < 8; i++) {
-
-        const input1 = document.getElementById(`oit${i}_1`);
-        const input2 = document.getElementById(`oit${i}_2`);
-    
-        console.log(
-            i,
-            input1,
-            input2
-        );
-    
-    }
-
-
-
-
 
     confrontos.forEach((jogo, index) => {
 
@@ -944,14 +927,14 @@ function gerarOitavas(confrontos) {
         <input
             type="number"
             min="0"
-            id="oit${index}_1"
+            id="qua${index}_1"
             onchange="calcularOitavas()">
         <span style="margin:0 10px;">x</span>
 
         <input
             type="number"
             min="0"
-            id="oit${index}_2"
+            id="qua${index}_2"
             onchange="calcularOitavas()">
         <span>${jogo[1].nome}</span>
 
@@ -966,19 +949,87 @@ function gerarOitavas(confrontos) {
 document.getElementById("oitavas").innerHTML = html;
 
 }
-function calcularOitavas() {
+
+function gerarQuartas(confrontos) {
+
+        console.table(confrontos);
+        let html = `
+            <div class="bloco-tabela-grupo">
+                <h3>🏆 Quartas de Final</h3>
+        `;
+    
+        confrontos.forEach((jogo, index) => {
+    
+            html += `
+        <div class="partida">
+    
+            <span>${jogo[0].nome}</span>
+    
+            <input
+                type="number"
+                min="0"
+                id="qua${index}_1"
+                onchange="calcularQuartas()">
+            <span style="margin:0 10px;">x</span>
+    
+            <input
+                type="number"
+                min="0"
+                id="qua${index}_2"
+                onchange="calcularQuartas()">
+            <span>${jogo[1].nome}</span>
+    
+        </div>
+    `;
+    
+        });
+    
+        html += `</div>`;
+    
+        
+    document.getElementById("quartas").innerHTML = html;
+    
+
+
+
+}
+
+function gerarSemifinais(confrontos) {
+
+}
+
+function calcularQuartas() {
 
     console.clear();
+    
+    const vencedoresQuartas = [];
 
-    const vencedoresOitavas = [];
+    for (let i = 0; i < 4; i++) {
 
-    for (let i = 0; i < 8; i++) {
+        const input1 = document.getElementById(`qua${i}_1`);
+        const input2 = document.getElementById(`qua${i}_2`);
 
-        const gols1 = document.getElementById(`oit${i}_1`).value;
-        const gols2 = document.getElementById(`oit${i}_2`).value;
+        const gols1 = input1 ? input1.value : "";
+        const gols2 = input2 ? input2.value : "";
         if (gols1 === "" || gols2 === "")
             continue;
+        const g1 = Number(gols1);
+        const g2 = Number(gols2);
+        if (g1 > g2) {
+            vencedoresQuartas.push(
+                window.confrontosQuartas[i][0]
+            );
+        } else if (g2 > g1) {
+            vencedoresQuartas.push(
+                window.confrontosQuartas[i][1]
+            );
+        } else {
+            console.warn("EMPATE:", i + 1);
 
+            vencedoresQuartas.push(
+                window.confrontosQuartas[i][0]
+            );
+        }
         console.log(
             `Oitava ${i + 1}:`,
             gols1,
@@ -987,7 +1038,94 @@ function calcularOitavas() {
         );
 
     }
+    console.table(vencedoresQuartas);
 
+    if (vencedoresQuartas.length < 8)
+        return;
+    const confrontosSemifinais = [
+
+        [vencedoresQuartas[0], vencedoresQuartas[1]],
+        [vencedoresQuartas[2], vencedoresQuartas[3]]
+    
+    ];
+    
+    window.confrontosSemifinais = confrontosSemifinais;
+    
+    console.log("CHEGUEI NAS SEMIFINAIS");
+    
+    console.table(confrontosSemifinais);
+    
+    gerarSemifinais(confrontosSemifinais);
+
+    console.log("CHEGUEI NAS SEMI-FINAIS");
+
+    window.confrontosQuartas = confrontosQuartas;
+
+    console.table(confrontosQuartas);
+    gerarQuartas(confrontosQuartas);
+
+}
+
+function calcularOitavas() {
+
+    console.clear();
+
+    const vencedoresOitavas = [];
+
+    for (let i = 0; i < 8; i++) {
+
+        const input1 = document.getElementById(`oit${i}_1`);
+        const input2 = document.getElementById(`oit${i}_2`);
+
+        const gols1 = input1 ? input1.value : "";
+        const gols2 = input2 ? input2.value : "";
+        if (gols1 === "" || gols2 === "")
+            continue;
+        const g1 = Number(gols1);
+        const g2 = Number(gols2);
+        if (g1 > g2) {
+             vencedoresOitavas.push(
+             window.confrontosOitavas[i][0]
+            );
+        } else if (g2 > g1) {
+            vencedoresOitavas.push(
+                window.confrontosOitavas[i][1]
+            );
+        } else {
+            console.warn("EMPATE:", i + 1);
+
+            vencedoresOitavas.push(
+                window.confrontosOitavas[i][0]
+            );
+        }
+        console.log(
+            `Oitava ${i + 1}:`,
+            gols1,
+            "x",
+            gols2
+        );
+
+    }
+    console.table(vencedoresOitavas);
+
+    if (vencedoresOitavas.length < 8)
+        return;
+    const confrontosQuartas = [
+
+        [vencedoresOitavas[0], vencedoresOitavas[1]],
+        [vencedoresOitavas[2], vencedoresOitavas[3]],
+        [vencedoresOitavas[4], vencedoresOitavas[5]],
+        [vencedoresOitavas[6], vencedoresOitavas[7]]
+    
+    ];
+
+    console.log("CHEGUEI NAS QUARTAS");
+
+    window.confrontosQuartas = confrontosQuartas;
+
+    console.table(confrontosQuartas);
+    gerarQuartas(confrontosQuartas);
+    
 }
 
 /*
