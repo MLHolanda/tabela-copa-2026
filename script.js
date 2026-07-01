@@ -927,14 +927,14 @@ function gerarOitavas(confrontos) {
         <input
             type="number"
             min="0"
-            id="qua${index}_1"
+            id="oit${index}_1"
             onchange="calcularOitavas()">
         <span style="margin:0 10px;">x</span>
 
         <input
             type="number"
             min="0"
-            id="qua${index}_2"
+            id="oit${index}_2"
             onchange="calcularOitavas()">
         <span>${jogo[1].nome}</span>
 
@@ -996,7 +996,279 @@ function gerarQuartas(confrontos) {
 
 function gerarSemifinais(confrontos) {
 
+    console.table(confrontos);
+    let html = `
+        <div class="bloco-tabela-grupo">
+            <h3>🏆 Semifinais</h3>
+    `;
+
+    confrontos.forEach((jogo, index) => {
+
+        html += `
+    <div class="partida">
+
+        <span>${jogo[0].nome}</span>
+
+        <input
+            type="number"
+            min="0"
+            id="semi${index}_1"
+            onchange="calcularSemifinais()">
+        <span style="margin:0 10px;">x</span>
+
+        <input
+            type="number"
+            min="0"
+            id="semi${index}_2"
+            onchange="calcularSemifinais()">
+        <span>${jogo[1].nome}</span>
+
+    </div>
+`;
+
+    });
+
+    html += `</div>`;
+
+document.getElementById("semifinais").innerHTML = html;
+
+
 }
+
+function gerarTerceiroLugar(confronto) {
+
+    let html = `
+        <div class="bloco-tabela-grupo">
+            <h3>🥉 Disputa do 3º Lugar</h3>
+
+            <div class="partida">
+
+                <span>${confronto[0].nome}</span>
+
+                <input
+                    type="number"
+                    min="0"
+                    id="terceiro_1"
+                    onchange="calcularTerceiroLugar()">
+
+                <span style="margin:0 10px;">x</span>
+
+                <input
+                    type="number"
+                    min="0"
+                    id="terceiro_2"
+                    onchange="calcularTerceiroLugar()">
+
+                <span>${confronto[1].nome}</span>
+
+            </div>
+
+        </div>
+    `;
+
+    document.getElementById("terceiro-lugar").innerHTML = html;
+
+}
+
+function gerarFinal(confronto) {
+
+    let html = `
+        <div class="bloco-tabela-grupo">
+            <h3>🏆 Final</h3>
+
+            <div class="partida">
+
+                <span>${confronto[0].nome}</span>
+
+                <input
+                    type="number"
+                    min="0"
+                    id="final_1"
+                    onchange="calcularFinal()">
+
+                <span style="margin:0 10px;">x</span>
+
+                <input
+                    type="number"
+                    min="0"
+                    id="final_2"
+                    onchange="calcularFinal()">
+
+                <span>${confronto[1].nome}</span>
+
+            </div>
+
+        </div>
+    `;
+
+    document.getElementById("final").innerHTML = html;
+
+}
+
+function calcularFinal() {
+
+    const input1 = document.getElementById("final_1");
+    const input2 = document.getElementById("final_2");
+
+    if (!input1 || !input2)
+        return;
+
+    if (input1.value === "" || input2.value === "")
+        return;
+
+    const g1 = Number(input1.value);
+    const g2 = Number(input2.value);
+
+    if (g1 === g2) {
+        console.warn("EMPATE NA FINAL");
+        return;
+    }
+
+    const campeao =
+        g1 > g2
+        ? window.confrontoFinal[0]
+        : window.confrontoFinal[1];
+
+    const vice =
+        g1 > g2
+        ? window.confrontoFinal[1]
+        : window.confrontoFinal[0];
+
+    console.log("🏆 CAMPEÃO");
+    console.table([campeao]);
+
+    console.log("🥈 VICE");
+    console.table([vice]);
+
+}
+
+function calcularTerceiroLugar() {
+
+    const input1 = document.getElementById("terceiro_1");
+    const input2 = document.getElementById("terceiro_2");
+
+    if (!input1 || !input2)
+        return;
+
+    if (input1.value === "" || input2.value === "")
+        return;
+
+    const g1 = Number(input1.value);
+    const g2 = Number(input2.value);
+
+    if (g1 === g2) {
+        console.warn("EMPATE NO 3º LUGAR");
+        return;
+    }
+
+    const terceiro =
+        g1 > g2
+        ? window.confrontoTerceiro[0]
+        : window.confrontoTerceiro[1];
+
+    const quarto =
+        g1 > g2
+        ? window.confrontoTerceiro[1]
+        : window.confrontoTerceiro[0];
+
+    console.log("🥉 TERCEIRO");
+    console.table([terceiro]);
+
+    console.log("4️⃣ QUARTO");
+    console.table([quarto]);
+
+}
+
+function calcularSemifinais() {
+
+    console.clear();
+    
+    const vencedoresSemifinais = [];
+    const perdedoresSemifinais = [];
+    for (let i = 0; i < 2; i++) {
+
+        const input1 = document.getElementById(`semi${i}_1`);
+        const input2 = document.getElementById(`semi${i}_2`);
+
+        const gols1 = input1 ? input1.value : "";
+        const gols2 = input2 ? input2.value : "";
+        if (gols1 === "" || gols2 === "")
+            continue;
+        const g1 = Number(gols1);
+        const g2 = Number(gols2);
+        if (g1 > g2) {
+
+            vencedoresSemifinais.push(
+                window.confrontosSemifinais[i][0]
+            );
+        
+            perdedoresSemifinais.push(
+                window.confrontosSemifinais[i][1]
+            );
+        
+        } else if (g2 > g1) {
+        
+            vencedoresSemifinais.push(
+                window.confrontosSemifinais[i][1]
+            );
+        
+            perdedoresSemifinais.push(
+                window.confrontosSemifinais[i][0]
+            );
+        
+        } else {
+        
+            console.warn("EMPATE:", i + 1);
+        
+            // Temporário
+            vencedoresSemifinais.push(
+                window.confrontosSemifinais[i][0]
+            );
+        
+            perdedoresSemifinais.push(
+                window.confrontosSemifinais[i][1]
+            );
+        
+        }
+        console.log(
+            `Semifinal ${i + 1}:`,
+            gols1,
+            "x",
+            gols2
+        );
+
+}
+    console.table(vencedoresSemifinais);
+
+    if (
+        vencedoresSemifinais.length < 2 ||
+        perdedoresSemifinais.length < 2
+    )
+        return;
+    const confrontoFinal = [
+        vencedoresSemifinais[0],
+        vencedoresSemifinais[1]
+    ];
+
+    const confrontoTerceiro = [
+        perdedoresSemifinais[0],
+        perdedoresSemifinais[1]
+    ];
+    
+    window.confrontoFinal = confrontoFinal;
+    window.confrontoTerceiro = confrontoTerceiro;
+    
+    console.log("FINAL");
+    console.table(confrontoFinal);
+    
+    console.log("3º LUGAR");
+    console.table(confrontoTerceiro);
+    
+    gerarFinal(confrontoFinal);
+    gerarTerceiroLugar(confrontoTerceiro);
+    
+
+    }
 
 function calcularQuartas() {
 
@@ -1037,10 +1309,10 @@ function calcularQuartas() {
             gols2
         );
 
-    }
+}
     console.table(vencedoresQuartas);
 
-    if (vencedoresQuartas.length < 8)
+    if (vencedoresQuartas.length < 4)
         return;
     const confrontosSemifinais = [
 
@@ -1051,18 +1323,12 @@ function calcularQuartas() {
     
     window.confrontosSemifinais = confrontosSemifinais;
     
-    console.log("CHEGUEI NAS SEMIFINAIS");
+    console.log("SEMIFINAIS");
     
     console.table(confrontosSemifinais);
     
     gerarSemifinais(confrontosSemifinais);
 
-    console.log("CHEGUEI NAS SEMI-FINAIS");
-
-    window.confrontosQuartas = confrontosQuartas;
-
-    console.table(confrontosQuartas);
-    gerarQuartas(confrontosQuartas);
 
 }
 
